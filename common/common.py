@@ -28,17 +28,12 @@ SLIDER_TYPE_CHOICES = (
 )
 
 
-from django.db import models
-from django.utils.text import slugify
-from django.utils.translation import gettext_lazy as _
-
-
 STATUS_CHOICES = (
     ("active", _("Active")),
     ("inactive", _("Inactive")),
 )
 
-
+# BASE MIXIN
 class BaseMixin(models.Model):
     status = models.CharField(_("Status"), max_length=20, choices=STATUS_CHOICES, default="active")
     created_at = models.DateTimeField(_("Created_at"), auto_now_add=True)
@@ -48,6 +43,7 @@ class BaseMixin(models.Model):
         abstract = True
 
 
+# COMMON MIXIN
 class CommonMixin(models.Model):
     slug = models.SlugField(_("Slug"), max_length=255, unique=True, blank=True, null=True)
     keyword = models.CharField(_("Keyword"), max_length=255, blank=True, null=True)
