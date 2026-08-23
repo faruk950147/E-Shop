@@ -46,7 +46,7 @@ class BaseMixin(models.Model):
 # COMMON MIXIN
 class CommonMixin(models.Model):
     slug = models.SlugField(_("Slug"), max_length=255, unique=True, blank=True, null=True)
-    keyword = models.CharField(_("Keyword"), max_length=255, blank=True, null=True)
+    additional = models.CharField(_("Additional"), max_length=255, blank=True, null=True)
     description = models.CharField(_("Description"), max_length=255, blank=True, null=True)
 
     class Meta:

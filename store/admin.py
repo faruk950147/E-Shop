@@ -8,13 +8,13 @@ from store.models import (
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_display = (
-        'id', 'parent', 'title', 'slug', 'keyword', 'description', 'image_tag', 'is_featured',
+        'id', 'parent', 'title', 'slug', 'additional', 'description', 'image_tag', 'is_featured',
         'status', 'created_at', 'updated_at'
     )
     
     list_editable = ('is_featured', 'status')
 
-    search_fields = ('title', 'keyword', 'description')
+    search_fields = ('title', 'additional', 'description')
 
     list_filter = ('status', 'is_featured')
 
@@ -23,7 +23,7 @@ class CategoryAdmin(admin.ModelAdmin):
     add_fieldsets = (
         (None, {
             "fields": (
-                'parent', 'title', 'slug', 'keyword', 'description', 'image', 
+                'parent', 'title', 'slug', 'additional', 'description', 'image', 
                 'is_featured', 'status',
             ),
         }),
@@ -32,7 +32,7 @@ class CategoryAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": (
-                'parent', 'title', 'slug', 'keyword', 'description', 'image', 
+                'parent', 'title', 'slug', 'additional', 'description', 'image', 
                 'is_featured', 'status',
             ),
         }),
