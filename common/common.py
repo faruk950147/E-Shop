@@ -35,9 +35,9 @@ STATUS_CHOICES = (
 
 # BASE MIXIN
 class BaseMixin(models.Model):
-    status = models.CharField(_("Status"), max_length=20, choices=STATUS_CHOICES, default="active")
-    created_at = models.DateTimeField(_("Created_at"), auto_now_add=True)
-    updated_at = models.DateTimeField(_("Updated_at"), auto_now=True)
+    status = models.CharField(_("status"), max_length=20, choices=STATUS_CHOICES, default="active")
+    created_at = models.DateTimeField(_("created_at"), auto_now_add=True)
+    updated_at = models.DateTimeField(_("updated_at"), auto_now=True)
 
     class Meta:
         abstract = True
@@ -45,9 +45,9 @@ class BaseMixin(models.Model):
 
 # COMMON MIXIN
 class CommonMixin(models.Model):
-    slug = models.SlugField(_("Slug"), max_length=255, unique=True, blank=True, null=True)
-    additional = models.CharField(_("Additional"), max_length=255, blank=True, null=True)
-    description = models.CharField(_("Description"), max_length=255, blank=True, null=True)
+    slug = models.SlugField(_("slug"), max_length=255, unique=True, blank=True, null=True)
+    additional = models.CharField(_("additional"), max_length=255, blank=True, null=True)
+    description = models.CharField(_("description"), max_length=255, blank=True, null=True)
 
     class Meta:
         abstract = True
