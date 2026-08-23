@@ -4,36 +4,43 @@ from django.utils.translation import gettext_lazy as _
 
 
 # STATUS
-class StatusChoices(models.TextChoices):
-    Active = "active", _("Active")
-    Inactive = "inactive", _("Inactive")
+STATUS_CHOICES = (
+    ("active", _("Active")),
+    ("inactive", _("Inactive")),
+)
 
-
-# VARIANT TYPE 
-class VariantType(models.TextChoices):
-    NONE = "none", _("None")
-    COLOR = "color", _("Color")
-    SIZE = "size", _("Size")
-    COLOR_SIZE = "color_size", _("Color Size")
+# VARIANT TYPE
+VARIANT_TYPE_CHOICES = (
+    ("none", _("None")),
+    ("color", _("Color")),
+    ("size", _("Size")),
+    ("color_size", _("Color Size")),
+)
 
 
 # SLIDER TYPE
-class SliderType(models.TextChoices):
-    NONE = "none", _("None")
-    SLIDER = "slider", _("Slider")
-    ADD = "add", _("Add")
-    FEATURE = "feature", _("Feature")
-    PROMOTION = "promotion", _("Promotion")
+SLIDER_TYPE_CHOICES = (
+    ("none", _("None")),
+    ("slider", _("Slider")),
+    ("add", _("Add")),
+    ("feature", _("Feature")),
+    ("promotion", _("Promotion")),
+)
 
 
-# BASE MIXIN 
+from django.db import models
+from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
+
+
+STATUS_CHOICES = (
+    ("active", _("Active")),
+    ("inactive", _("Inactive")),
+)
+
+
 class BaseMixin(models.Model):
-    status = models.CharField(
-        _("Status"),
-        max_length=20,
-        choices=StatusChoices.choices,
-        default=StatusChoices.Active,
-    )
+    status = models.CharField(_("Status"), max_length=20, choices=STATUS_CHOICES, default="active")
     created_at = models.DateTimeField(_("Created_at"), auto_now_add=True)
     updated_at = models.DateTimeField(_("Updated_at"), auto_now=True)
 
@@ -41,7 +48,6 @@ class BaseMixin(models.Model):
         abstract = True
 
 
-# COMMON MIXIN
 class CommonMixin(models.Model):
     slug = models.SlugField(_("Slug"), max_length=255, unique=True, blank=True, null=True)
     keyword = models.CharField(_("Keyword"), max_length=255, blank=True, null=True)
@@ -52,7 +58,7 @@ class CommonMixin(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            # title field parent model 
+            # Parent model-এর title field
             if hasattr(self, "title"):
                 base_slug = slugify(self.title)
             else:
@@ -61,4 +67,3 @@ class CommonMixin(models.Model):
             self.slug = base_slug
 
         super().save(*args, **kwargs)
-        
