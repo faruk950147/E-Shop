@@ -64,7 +64,8 @@ class CommonMixin(models.Model):
             self.slug = base_slug
 
         super().save(*args, **kwargs)
-        
+
+
 class SingletonMixin(BaseMixin):
     """
     Abstract model that allows only one database record.

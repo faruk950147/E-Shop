@@ -591,56 +591,49 @@
 			<!-- row -->
 			<div class="row">
 				
+				{% if footer %}
 				<!-- Company Info / Logo -->
 				<div class="col-md-3">
 					<div class="footer-widget">
 						<h3 class="footer-title">About Us</h3>
-						<p>A brief 1-2 sentence description of your company, mission, or website focus goes here.</p>
+						<p>{{ footer.about_text|default:"" }}</p>
 					</div>
 				</div>
+				{% endif %}
 
 				<!-- Quick Links -->
-				<div class="col-md-3">
+				<div class="col-md-6">
 					<div class="footer-widget">
 						<h3 class="footer-title">Quick Links</h3>
-						<ul class="footer-links">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Contact</a></li>
+						<ul class="footer-links" style="display: flex; flex-wrap: wrap; gap: 10px 20px; padding: 0; list-style: none;">
+							{% for link in footer.links.all %}
+								{% if link.status == 'active' %}
+									<li><a href="{{ link.url }}">{{ link.title }}</a></li>
+								{% endif %}
+							{% empty %}
+								<li><a href="#">No links available</a></li>
+							{% endfor %}
 						</ul>
 					</div>
 				</div>
 
-				<!-- Legal Pages -->
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title">Legal</h3>
-						<ul class="footer-links">
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Terms of Service</a></li>
-							<li><a href="#">Cookie Policy</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<!-- Contact & Social -->
+				{% if footer %}
+				<!-- Contact Info -->
 				<div class="col-md-3">
 					<div class="footer-widget">
 						<h3 class="footer-title">Contact Info</h3>
-						<p><i class="fa fa-map-marker"></i> 123 Street, City, Country</p>
-						<p><i class="fa fa-phone"></i> +123 456 7890</p>
-						<p><i class="fa fa-envelope"></i> info@example.com</p>
-						
-						<!-- Social Icons -->
-						<ul class="footer-social" style="list-style: none; padding: 0; display: flex; gap: 10px; margin-top: 10px;">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
+						{% if footer.address %}
+							<p><i class="fa fa-map-marker"></i> {{ footer.address }}</p>
+						{% endif %}
+						{% if footer.phone %}
+							<p><i class="fa fa-phone"></i> {{ footer.phone }}</p>
+						{% endif %}
+						{% if footer.email %}
+							<p><i class="fa fa-envelope"></i> {{ footer.email }}</p>
+						{% endif %}
 					</div>
 				</div>
+				{% endif %}
 
 			</div>
 			<!-- /row -->
@@ -651,9 +644,7 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<div class="footer-copyright">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy; {% now "Y" %} {{ footer.copyright_text|default:"All rights reserved" }}
 					</div>
 				</div>
 			</div>

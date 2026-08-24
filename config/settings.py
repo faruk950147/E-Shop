@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
     # 'cart.apps.CartConfig',
     # 'checkout.apps.CheckoutConfig'
+    'setting.apps.SettingConfig'
 ]
 
 # =========================

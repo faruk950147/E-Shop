@@ -19,15 +19,6 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = ('status', 'is_featured')
 
     readonly_fields = ('created_at','updated_at','image_tag')
-    
-    add_fieldsets = (
-        (None, {
-            "fields": (
-                'parent', 'title', 'slug', 'additional', 'description', 'image', 
-                'is_featured', 'status',
-            ),
-        }),
-    )
 
     fieldsets = (
         (None, {

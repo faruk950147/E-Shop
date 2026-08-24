@@ -3,14 +3,34 @@ from django.utils.translation import gettext_lazy as _
 
 from common.common import (
     BaseMixin,
-    StripMixin
+    SingletonMixin
+)
+from mixins.mixins import (
+    StripMixin,
+    ImageTagMixin
+)
+from validation.validators import (
+    validate_image_size, validate_file_extension
 )
 
-from django.db import models
-from django.utils.translation import gettext_lazy as _
+class Logo(StripMixin, SingletonMixin, BaseMixin, ImageTagMixin):
+    title = models.CharField(_('title'), unique=True, max_length=150)
+    image = models.ImageField(
+        _("image"), upload_to="logo/%Y/%m/%d/", 
+        validators=[validate_image_size, validate_file_extension], 
+        default="defaults/default.jpg"
+    )
+    class Meta:
+        verbose_name_plural = "01. Logo"
+        db_table = "settings_logo"
+        ordering = ["id"]
+        indexes = [
+            models.Index(fields=["status"]),
+            models.Index(fields=["created_at"]),
+            models.Index(fields=["updated_at"]),
+        ]
 
-
-class Footer(StripMixin, BaseMixin):
+class Footer(StripMixin, SingletonMixin, BaseMixin):
     about_text = models.TextField(
         _("about_text"),
         blank=True,
@@ -42,7 +62,7 @@ class Footer(StripMixin, BaseMixin):
     )
 
     class Meta:
-        verbose_name_plural = "01. Footer"
+        verbose_name_plural = "02. Footer"
         db_table = "settings_footer"
         ordering = ["id"]
         indexes = [
@@ -69,7 +89,7 @@ class Link(StripMixin, BaseMixin):
     )
 
     class Meta:
-        verbose_name_plural = "02. Links"
+        verbose_name_plural = "03. Links"
         db_table = "settings_link"
         ordering = ["id"]
         indexes = [
