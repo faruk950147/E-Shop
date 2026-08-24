@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 11:10+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\common\common.py:8 .\common\common.py:32
+msgid "Active"
+msgstr ""
+
+#: .\common\common.py:9 .\common\common.py:33
+msgid "Inactive"
+msgstr ""
+
+#: .\common\common.py:14 .\common\common.py:23
+msgid "None"
+msgstr ""
+
+#: .\common\common.py:15
+msgid "Color"
+msgstr ""
+
+#: .\common\common.py:16
+msgid "Size"
+msgstr ""
+
+#: .\common\common.py:17
+msgid "Color Size"
+msgstr ""
+
+#: .\common\common.py:24
+msgid "Slider"
+msgstr ""
+
+#: .\common\common.py:25
+msgid "Add"
+msgstr ""
+
+#: .\common\common.py:26
+msgid "Feature"
+msgstr ""
+
+#: .\common\common.py:27
+msgid "Promotion"
+msgstr ""
+
+#: .\common\common.py:38
+msgid "status"
+msgstr ""
+
+#: .\common\common.py:39
+msgid "created_at"
+msgstr ""
+
+#: .\common\common.py:40
+msgid "updated_at"
+msgstr ""
+
+#: .\common\common.py:48
+msgid "slug"
+msgstr ""
+
+#: .\common\common.py:49
+msgid "additional"
+msgstr ""
+
+#: .\common\common.py:50
+msgid "description"
+msgstr ""
+
+#: .\store\models.py:31
+msgid "title"
+msgstr ""
+
+#: .\store\models.py:33
+msgid "image"
+msgstr ""
+
+#: .\store\models.py:37
+msgid "is_featured"
+msgstr ""
+
+#: .\store\views.py:7
+msgid "Hello, world!"
+msgstr ""
+
+#: .\validation\validators.py:10
+msgid "Enter a valid phone number"
+msgstr ""
+
+#: .\validation\validators.py:15
+msgid "Username can contain only letters, numbers and underscore"
+msgstr ""

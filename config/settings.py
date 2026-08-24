@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'corsheaders.middleware.CorsMiddleware',  # Enable CORS
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',  # CSRF protection
@@ -118,6 +119,15 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Dhaka'
 USE_I18N = True
 USE_TZ = True
+LANGUAGE_BIDI = False  # Set to True for RTL languages, False otherwise
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('bn', 'Bangla'),
+]
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
 
 # =========================
 # Static & Media files
