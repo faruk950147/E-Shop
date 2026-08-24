@@ -3,6 +3,7 @@
 
 <head>
 	{% load static %}
+	{% load i18n %}
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,32 +38,79 @@
 		<!-- top Header -->
 		<div id="top-header">
 			<div class="container">
+
 				<div class="pull-left">
-					<span>Welcome to E-shop!</span>
+					<span>Welcome to {{ SITE_NAME }}!</span>
 				</div>
+
 				<div class="pull-right">
 					<ul class="header-top-links">
+
 						<li><a href="#">Store</a></li>
 						<li><a href="#">Newsletter</a></li>
 						<li><a href="#">FAQ</a></li>
+
+						<!-- Language -->
 						<li class="dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">ENG <i class="fa fa-caret-down"></i></a>
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="false">
+
+								{% get_current_language as CURRENT_LANGUAGE %}
+								{{ CURRENT_LANGUAGE|upper }}
+
+								<i class="fa fa-caret-down"></i>
+							</a>
+
 							<ul class="custom-menu">
-								<li><a href="#">English (ENG)</a></li>
-								<li><a href="#">Russian (Ru)</a></li>
-								<li><a href="#">French (FR)</a></li>
-								<li><a href="#">Spanish (Es)</a></li>
+
+								{% for lang_code, lang_name in SUPPORTED_LANGUAGES %}
+									<li>
+										<form action="{% url 'set_language' %}"
+											method="post"
+											style="display: inline;">
+											{% csrf_token %}
+
+											<input type="hidden"
+												name="next"
+												value="{{ request.get_full_path }}">
+
+											<input type="hidden"
+												name="language"
+												value="{{ lang_code }}">
+
+											<button type="submit"
+													style="background: none;
+														border: none;
+														padding: 0;
+														cursor: pointer;">
+												{{ lang_name }}
+											</button>
+										</form>
+									</li>
+								{% endfor %}
+
 							</ul>
 						</li>
+
+						<!-- Currency -->
 						<li class="dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">USD <i class="fa fa-caret-down"></i></a>
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="false">
+
+								USD <i class="fa fa-caret-down"></i>
+							</a>
+
 							<ul class="custom-menu">
 								<li><a href="#">USD ($)</a></li>
 								<li><a href="#">EUR (€)</a></li>
 							</ul>
 						</li>
+
 					</ul>
 				</div>
+
 			</div>
 		</div>
 		<!-- /top Header -->
@@ -532,10 +580,6 @@
 		<!-- /container -->
 	</div>
 	<!-- /section -->
-
-	{% block content %}
-	
-	{% endblock content %}
 
 	<!-- FOOTER -->
 	<footer id="footer" class="section section-grey">
