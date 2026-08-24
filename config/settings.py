@@ -146,12 +146,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # =========================
 # Authentication & JWT
 # =========================
-# AUTH_USER_MODEL = "account.User"
-# AUTHENTICATION_BACKENDS = [
-#     'django.contrib.auth.backends.ModelBackend',  # Default
-#     'account.backends.AuthBackend',  # Email/Phone login
-# ]
+'''
+AUTH_USER_MODEL = "account.User"
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Default
+    'account.backends.AuthBackend',  # Email/Phone login
+]
 
+'''
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
