@@ -12,6 +12,17 @@ from mixins.mixins import (
 from validation.validators import (
     validate_image_size, validate_file_extension
 )
+class SiteName(StripMixin, SingletonMixin, BaseMixin):
+    title = models.CharField(_('title'), unique=True, max_length=150)
+    class Meta:
+        verbose_name_plural = "01. Site Name"
+        db_table = "settings_site_name"
+        ordering = ["id"]
+        indexes = [
+            models.Index(fields=["status"]),
+            models.Index(fields=["created_at"]),
+            models.Index(fields=["updated_at"]),
+        ]    
 
 class Logo(StripMixin, SingletonMixin, BaseMixin, ImageTagMixin):
     title = models.CharField(_('title'), unique=True, max_length=150)
@@ -21,7 +32,7 @@ class Logo(StripMixin, SingletonMixin, BaseMixin, ImageTagMixin):
         default="defaults/default.jpg"
     )
     class Meta:
-        verbose_name_plural = "01. Logo"
+        verbose_name_plural = "02. Logo"
         db_table = "settings_logo"
         ordering = ["id"]
         indexes = [
@@ -62,7 +73,7 @@ class Footer(StripMixin, SingletonMixin, BaseMixin):
     )
 
     class Meta:
-        verbose_name_plural = "02. Footer"
+        verbose_name_plural = "03. Footer"
         db_table = "settings_footer"
         ordering = ["id"]
         indexes = [
@@ -89,7 +100,7 @@ class Link(StripMixin, BaseMixin):
     )
 
     class Meta:
-        verbose_name_plural = "03. Links"
+        verbose_name_plural = "04. Links"
         db_table = "settings_link"
         ordering = ["id"]
         indexes = [
