@@ -1,8 +1,11 @@
-from django.conf import settings
-
+from setting.models import Footer, Link
 
 def settings_context(request):
+    """
+    Context processor to pass active Footer and Link data to all templates.
+    """
+    footer = Footer.objects.filter(status="active").prefetch_related("links").first()
+
     return {
-        "SITE_NAME": "E-Shop",
-        "SUPPORTED_LANGUAGES": settings.LANGUAGES,
+        'footer': footer,
     }

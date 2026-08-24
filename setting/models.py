@@ -6,6 +6,9 @@ from common.common import (
     StripMixin
 )
 
+from django.db import models
+from django.utils.translation import gettext_lazy as _
+
 
 class Footer(StripMixin, BaseMixin):
     about_text = models.TextField(
@@ -31,19 +34,17 @@ class Footer(StripMixin, BaseMixin):
         blank=True,
         null=True,
     )
-    # Copyright
     copyright_text = models.CharField(
         _("copyright_text"),
         max_length=255,
         default="All rights reserved",
         help_text=_("Custom copyright notice line"),
     )
+
     class Meta:
         verbose_name_plural = "01. Footer"
         db_table = "settings_footer"
         ordering = ["id"]
-        
-        # indexing for faster queries
         indexes = [
             models.Index(fields=["status"]),
             models.Index(fields=["created_at"]),
@@ -52,30 +53,30 @@ class Footer(StripMixin, BaseMixin):
 
 
 class Link(StripMixin, BaseMixin):
+    footer = models.ForeignKey(
+        Footer,
+        on_delete=models.CASCADE,
+        related_name="links",
+    )
     title = models.CharField(
-        _("Title"),
+        _("title"),
         max_length=100,
         help_text=_("e.g. Quick Links, Legal, Policies"),
     )
     url = models.URLField(
         _("url"),
-        help_text=_("Display order of column headers"),
+        help_text=_("Target URL for this link"),
     )
 
     class Meta:
-        verbose_name_plural = "02. Link"
+        verbose_name_plural = "02. Links"
         db_table = "settings_link"
         ordering = ["id"]
-        
-        # indexing for faster queries
         indexes = [
             models.Index(fields=["status"]),
             models.Index(fields=["created_at"]),
             models.Index(fields=["updated_at"]),
         ]
 
-
     def __str__(self):
-        return self.title
-
-
+        return f"{self.title} ({self.url})"

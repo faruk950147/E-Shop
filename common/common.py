@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
@@ -54,7 +55,7 @@ class CommonMixin(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            # Parent model-এর title field
+            # Parent model-of title field
             if hasattr(self, "title"):
                 base_slug = slugify(self.title)
             else:
@@ -63,3 +64,24 @@ class CommonMixin(models.Model):
             self.slug = base_slug
 
         super().save(*args, **kwargs)
+        
+class SingletonMixin(BaseMixin):
+    """
+    Abstract model that allows only one database record.
+    """
+
+    class Meta:
+        abstract = True
+
+    def clean(self):
+        super().clean()
+
+        if self.__class__.objects.exclude(pk=self.pk).exists():
+            raise ValidationError(
+                _("Only one %(model)s instance is allowed."),
+                params={"model": self._meta.verbose_name},
+            )
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
