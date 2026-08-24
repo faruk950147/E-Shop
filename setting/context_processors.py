@@ -1,11 +1,11 @@
-from setting.models import Footer, Link
+from .models import SiteName, Logo, Footer
 
-def settings_context(request):
+def site_settings(request):
     """
-    Context processor to pass active Footer and Link data to all templates.
+    Injects site configuration singletons globally into template contexts.
     """
-    footer = Footer.objects.filter(status="active").prefetch_related("links").first()
-
     return {
-        'footer': footer,
+        'site_name': SiteName.objects.filter(status='active').first(),
+        'site_logo': Logo.objects.filter(status='active').first(),
+        'site_footer': Footer.objects.filter(status='active').prefetch_related('links').first(),
     }

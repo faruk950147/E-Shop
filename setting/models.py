@@ -1,49 +1,44 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from common.common import (
-    BaseMixin,
-    SingletonMixin
-)
-from mixins.mixins import (
-    StripMixin,
-    ImageTagMixin
-)
-from validation.validators import (
-    validate_image_size, validate_file_extension
-)
+from common.common import BaseMixin, SingletonMixin
+from mixins.mixins import StripMixin, ImageTagMixin
+from validation.validators import validate_image_size, validate_file_extension
+
+
 class SiteName(StripMixin, SingletonMixin, BaseMixin):
     title = models.CharField(_('title'), unique=True, max_length=150)
+
     class Meta:
-        verbose_name_plural = "01. Site Name"
+        verbose_name = _("Site Name")
+        verbose_name_plural = _("01. Site Name")
         db_table = "settings_site_name"
-        ordering = ["id"]
-        indexes = [
-            models.Index(fields=["status"]),
-            models.Index(fields=["created_at"]),
-            models.Index(fields=["updated_at"]),
-        ]    
+
+    def __str__(self):
+        return self.title
+
 
 class Logo(StripMixin, SingletonMixin, BaseMixin, ImageTagMixin):
     title = models.CharField(_('title'), unique=True, max_length=150)
     image = models.ImageField(
-        _("image"), upload_to="logo/%Y/%m/%d/", 
-        validators=[validate_image_size, validate_file_extension], 
-        default="defaults/default.jpg"
+        _("image"),
+        upload_to="logo/%Y/%m/%d/",
+        validators=[validate_image_size, validate_file_extension],
+        default="defaults/default.jpg",
     )
+
     class Meta:
-        verbose_name_plural = "02. Logo"
+        verbose_name = _("Logo")
+        verbose_name_plural = _("02. Logo")
         db_table = "settings_logo"
-        ordering = ["id"]
-        indexes = [
-            models.Index(fields=["status"]),
-            models.Index(fields=["created_at"]),
-            models.Index(fields=["updated_at"]),
-        ]
+
+    def __str__(self):
+        return self.title
+
 
 class Footer(StripMixin, SingletonMixin, BaseMixin):
     about_text = models.TextField(
-        _("about_text"),
+        _("about text"),
         blank=True,
         null=True,
         help_text=_("Short description about the company"),
@@ -66,21 +61,19 @@ class Footer(StripMixin, SingletonMixin, BaseMixin):
         null=True,
     )
     copyright_text = models.CharField(
-        _("copyright_text"),
+        _("copyright text"),
         max_length=255,
         default="All rights reserved",
         help_text=_("Custom copyright notice line"),
     )
 
     class Meta:
-        verbose_name_plural = "03. Footer"
+        verbose_name = _("Footer")
+        verbose_name_plural = _("03. Footer")
         db_table = "settings_footer"
-        ordering = ["id"]
-        indexes = [
-            models.Index(fields=["status"]),
-            models.Index(fields=["created_at"]),
-            models.Index(fields=["updated_at"]),
-        ]
+
+    def __str__(self):
+        return f"Footer Configuration ({self.pk})"
 
 
 class Link(StripMixin, BaseMixin):
@@ -94,13 +87,15 @@ class Link(StripMixin, BaseMixin):
         max_length=100,
         help_text=_("e.g. Quick Links, Legal, Policies"),
     )
-    url = models.URLField(
+    url = models.CharField(
         _("url"),
-        help_text=_("Target URL for this link"),
+        max_length=500,
+        help_text=_("Target URL or path (e.g. /about-us/ or https://example.com)"),
     )
 
     class Meta:
-        verbose_name_plural = "04. Links"
+        verbose_name = _("Link")
+        verbose_name_plural = _("04. Links")
         db_table = "settings_link"
         ordering = ["id"]
         indexes = [
