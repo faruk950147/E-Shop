@@ -1,0 +1,187 @@
+# Bangla Translation File
+# Copyright (C) 2026
+# Faruk Ahmed
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: E-SHOP\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-25 11:54+0600\n"
+"PO-Revision-Date: 2026-08-25 12:00+0600\n"
+"Last-Translator: Faruk Ahmed\n"
+"Language-Team: Bengali\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\common\common.py:9 .\common\common.py:33
+msgid "Active"
+msgstr "সক্রিয়"
+
+#: .\common\common.py:10 .\common\common.py:34
+msgid "Inactive"
+msgstr "নিষ্ক্রিয়"
+
+#: .\common\common.py:15 .\common\common.py:24
+msgid "None"
+msgstr "কোনোটিই নয়"
+
+#: .\common\common.py:16
+msgid "Color"
+msgstr "রঙ"
+
+#: .\common\common.py:17
+msgid "Size"
+msgstr "আকার"
+
+#: .\common\common.py:18
+msgid "Color Size"
+msgstr "রঙ ও আকার"
+
+#: .\common\common.py:25
+msgid "Slider"
+msgstr "স্লাইডার"
+
+#: .\common\common.py:26
+msgid "Add"
+msgstr "যোগ করুন"
+
+#: .\common\common.py:27
+msgid "Feature"
+msgstr "বৈশিষ্ট্য"
+
+#: .\common\common.py:28
+msgid "Promotion"
+msgstr "প্রমোশন"
+
+#: .\common\common.py:39
+msgid "status"
+msgstr "অবস্থা"
+
+#: .\common\common.py:40
+msgid "created_at"
+msgstr "তৈরির তারিখ ও সময়"
+
+#: .\common\common.py:41
+msgid "updated_at"
+msgstr "সংশোধনের তারিখ ও সময়"
+
+#: .\common\common.py:49
+msgid "slug"
+msgstr "স্লাগ"
+
+#: .\common\common.py:50
+msgid "additional"
+msgstr "অতিরিক্ত"
+
+#: .\common\common.py:51
+msgid "description"
+msgstr "বিবরণ"
+
+#: .\common\common.py:82
+#, python-format
+msgid "Only one %(model)s instance is allowed."
+msgstr "শুধুমাত্র একটি %(model)s রাখা যাবে।"
+
+#: .\setting\models.py:10 .\setting\models.py:22 .\setting\models.py:86
+#: .\store\models.py:31
+msgid "title"
+msgstr "শিরোনাম"
+
+#: .\setting\models.py:13
+msgid "Site Name"
+msgstr "সাইটের নাম"
+
+#: .\setting\models.py:14
+msgid "01. Site Name"
+msgstr "০১. সাইটের নাম"
+
+#: .\setting\models.py:24 .\store\models.py:33
+msgid "image"
+msgstr "ছবি"
+
+#: .\setting\models.py:31
+msgid "Logo"
+msgstr "লোগো"
+
+#: .\setting\models.py:32
+msgid "02. Logo"
+msgstr "০২. লোগো"
+
+#: .\setting\models.py:41
+msgid "about text"
+msgstr "আমাদের সম্পর্কে"
+
+#: .\setting\models.py:44
+msgid "Short description about the company"
+msgstr "কোম্পানি সম্পর্কে সংক্ষিপ্ত বিবরণ"
+
+#: .\setting\models.py:47
+msgid "address"
+msgstr "ঠিকানা"
+
+#: .\setting\models.py:53
+msgid "phone"
+msgstr "ফোন"
+
+#: .\setting\models.py:59
+msgid "email"
+msgstr "ইমেইল"
+
+#: .\setting\models.py:64
+msgid "copyright text"
+msgstr "কপিরাইট তথ্য"
+
+#: .\setting\models.py:67
+msgid "Custom copyright notice line"
+msgstr "কাস্টম কপিরাইট নোটিশ"
+
+#: .\setting\models.py:71
+msgid "Footer"
+msgstr "ফুটার"
+
+#: .\setting\models.py:72
+msgid "03. Footer"
+msgstr "০৩. ফুটার"
+
+#: .\setting\models.py:88
+msgid "e.g. Quick Links, Legal, Policies"
+msgstr "যেমন: দ্রুত লিংক, আইনগত তথ্য, নীতিমালা"
+
+#: .\setting\models.py:91
+msgid "url"
+msgstr "URL"
+
+#: .\setting\models.py:93
+msgid "Target URL or path (e.g. /about-us/ or https://example.com)"
+msgstr "টার্গেট URL অথবা পাথ (যেমন: /about-us/ অথবা https://example.com)"
+
+#: .\setting\models.py:97
+msgid "Link"
+msgstr "লিংক"
+
+#: .\setting\models.py:98
+msgid "04. Links"
+msgstr "০৪. লিংকসমূহ"
+
+#: .\store\models.py:37
+msgid "is_featured"
+msgstr "বিশেষভাবে প্রদর্শিত"
+
+#: .\store\views.py:9
+msgid "Hello, world!"
+msgstr "হ্যালো, বিশ্ব!"
+
+#: .\templates\base.html:12
+msgid "E-SHOP"
+msgstr "ই-শপ"
+
+#: .\validation\validators.py:10
+msgid "Enter a valid phone number"
+msgstr "একটি সঠিক ফোন নম্বর লিখুন"
+
+#: .\validation\validators.py:15
+msgid "Username can contain only letters, numbers and underscore"
+msgstr "ইউজারনেমে শুধুমাত্র অক্ষর, সংখ্যা এবং আন্ডারস্কোর (_) থাকতে পারে"
