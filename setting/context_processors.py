@@ -1,5 +1,4 @@
-from setting.models import Logo, Footer
-
+from setting.models import Logo
 
 def site_settings(request):
     """
@@ -10,8 +9,4 @@ def site_settings(request):
         "site_logo": Logo.objects.filter(
             status="active"
         ).first(),
-
-        "site_footer": Footer.objects.filter(
-            status="active"
-        ).prefetch_related("links").first(),
     }
