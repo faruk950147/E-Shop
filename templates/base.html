@@ -402,7 +402,7 @@
 							<li class="{% if category.children.all %}dropdown side-dropdown{% endif %}">
 								{% if category.children.all %}
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										{{ category.title }}
+										{{ category.title|upper }}
 										<i class="fa fa-angle-right"></i>
 									</a>
 									<div class="custom-menu">
@@ -411,14 +411,14 @@
 												<ul class="list-links">
 													<li><h3 class="list-links-title">{% translate "Subcategories" %}</h3></li>
 													{% for child in category.children.all %}
-														<li><a href="">{{ child.title }}</a></li>
+														<li><a href="">{{ child.title|upper }}</a></li>
 													{% endfor %}
 												</ul>
 											</div>
 										</div>
 									</div>
 								{% else %}
-									<a href="">{{ category.title }}</a>
+									<a href="">{{ category.title|upper }}</a>
 								{% endif %}
 							</li>
 						{% endfor %}
