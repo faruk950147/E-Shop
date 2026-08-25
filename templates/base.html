@@ -47,500 +47,1613 @@
 
 				<div class="pull-right">
 					<ul class="header-top-links">
+
+						<!-- Language -->
 						<li class="dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="cursor: pointer;">
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="true"
+							style="cursor: pointer;">
+
 								{% get_current_language as CURRENT_LANGUAGE %}
+
 								{% if CURRENT_LANGUAGE == 'bn' %}
-									বাং
+									বাংলা
 								{% else %}
 									ENG
 								{% endif %}
+
+								<i class="fa fa-caret-down"></i>
+							</a>
+
+							<ul class="custom-menu">
+
+								<li>
+									<form action="{% url 'set_language' %}" method="post">
+										{% csrf_token %}
+
+										<input name="next"
+											type="hidden"
+											value="{{ redirect_to }}">
+
+										<input name="language"
+											type="hidden"
+											value="en">
+
+										<button type="submit"
+												style="border:none;background:none;padding:0;cursor:pointer;width:100%;text-align:left;">
+											ENG
+										</button>
+									</form>
+								</li>
+
+								<li>
+									<form action="{% url 'set_language' %}" method="post">
+										{% csrf_token %}
+
+										<input name="next"
+											type="hidden"
+											value="{{ redirect_to }}">
+
+										<input name="language"
+											type="hidden"
+											value="bn">
+
+										<button type="submit"
+												style="border:none;background:none;padding:0;cursor:pointer;width:100%;text-align:left;">
+											বাংলা
+										</button>
+									</form>
+								</li>
+
+							</ul>
+						</li>
+						<!-- /Language -->
+
+
+						<!-- Currency -->
+						<li class="dropdown default-dropdown">
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="true">
+
+								USD
 								<i class="fa fa-caret-down"></i>
 							</a>
 
 							<ul class="custom-menu">
 								<li>
-									<form action="{% url 'set_language' %}" method="post">
-										{% csrf_token %}
-										<input name="next" type="hidden" value="{{ redirect_to }}">
-										<input name="language" type="hidden" value="en">
-										<button type="submit" style="border: none; background: none; padding: 0; cursor: pointer; width: 100%; text-align: left;">
-											ENG
-										</button>
-									</form>
+									<a href="#">USD ($)</a>
 								</li>
+
 								<li>
-									<form action="{% url 'set_language' %}" method="post">
-										{% csrf_token %}
-										<input name="next" type="hidden" value="{{ redirect_to }}">
-										<input name="language" type="hidden" value="bn">
-										<button type="submit" style="border: none; background: none; padding: 0; cursor: pointer; width: 100%; text-align: left;">
-											বাং
-										</button>
-									</form>
+									<a href="#">EUR (€)</a>
 								</li>
 							</ul>
 						</li>
-						<li class="dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">USD <i class="fa fa-caret-down"></i></a>
-							<ul class="custom-menu">
-								<li><a href="#">USD ($)</a></li>
-								<li><a href="#">EUR (€)</a></li>
-							</ul>
-						</li>
+						<!-- /Currency -->
+
 					</ul>
 				</div>
+
 			</div>
 		</div>
 		<!-- /top Header -->
 
-		<!-- header -->
+		<!-- Header -->
 		<div id="header">
 			<div class="container">
+
 				<div class="pull-left">
+
 					<!-- Logo -->
 					<div class="header-logo">
-						<a class="logo" href="{% url "home" %}">
-							<img src="{{site_logo.image.url|safe}}" alt="{{site_logo.title|upper}}">
+						<a class="logo" href="{% url 'home' %}">
+							<img src="{{ site_logo.image.url|safe }}"
+								alt="{{ site_logo.title|upper }}">
 						</a>
 					</div>
 					<!-- /Logo -->
 
+
 					<!-- Search -->
 					<div class="header-search">
 						<form>
-							<input class="input search-input" type="text" placeholder="Enter your keyword">
+
+							<input class="input search-input"
+								type="text"
+								placeholder="{% translate 'Enter your keyword' %}">
+
 							<select class="input search-categories">
-								<option value="0">All Categories</option>
-								<option value="1">Category 01</option>
-								<option value="1">Category 02</option>
+
+								<option value="0">
+									{% translate "All Categories" %}
+								</option>
+
+								<option value="1">
+									{% translate "Category 01" %}
+								</option>
+
+								<option value="2">
+									{% translate "Category 02" %}
+								</option>
+
 							</select>
-							<button class="search-btn"><i class="fa fa-search"></i></button>
+
+							<button class="search-btn"
+									type="submit">
+								<i class="fa fa-search"></i>
+							</button>
+
 						</form>
 					</div>
 					<!-- /Search -->
+
 				</div>
+
+
 				<div class="pull-right">
+
 					<ul class="header-btns">
+
 						<!-- Account -->
 						<li class="header-account dropdown default-dropdown">
-							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+
+							<div class="dropdown-toggle"
+								role="button"
+								data-toggle="dropdown"
+								aria-expanded="true">
+
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
-								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
+
+								<strong class="text-uppercase">
+									{% translate "My Account" %}
+									<i class="fa fa-caret-down"></i>
+								</strong>
+
 							</div>
-							<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+
+							<a href="#"
+							class="text-uppercase">
+								{% translate "Login" %}
+							</a>
+
+							/
+
+							<a href="#"
+							class="text-uppercase">
+								{% translate "Join" %}
+							</a>
+
 							<ul class="custom-menu">
-								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+
+								<li>
+									<a href="#">
+										<i class="fa fa-user-o"></i>
+										{% translate "My Account" %}
+									</a>
+								</li>
+
 							</ul>
+
 						</li>
 						<!-- /Account -->
 
+
 						<!-- Cart -->
 						<li class="header-cart dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="true">
+
 								<div class="header-btns-icon">
+
 									<i class="fa fa-shopping-cart"></i>
-									<span class="qty">3</span>
+
+									<span class="qty">
+										3
+									</span>
+
 								</div>
-								<strong class="text-uppercase">My Cart:</strong>
+
+								<strong class="text-uppercase">
+									{% translate "My Cart" %}:
+								</strong>
+
 								<br>
-								<span>35.20$</span>
+
+								<span>
+									$35.20
+								</span>
+
 							</a>
+
+
 							<div class="custom-menu">
+
 								<div id="shopping-cart">
+
 									<div class="shopping-cart-list">
+
+
+										<!-- Cart Product -->
 										<div class="product product-widget">
+
 											<div class="product-thumb">
-												<img src="{% static './img/thumb-product01.jpg' %}" alt="">
+												<img src="{% static './img/thumb-product01.jpg' %}"
+													alt="{% translate 'Product image' %}">
 											</div>
+
 											<div class="product-body">
-												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
-												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+
+												<h3 class="product-price">
+													$32.50
+
+													<span class="qty">
+														x3
+													</span>
+												</h3>
+
+												<h2 class="product-name">
+													<a href="#">
+														{% translate "Product Name Goes Here" %}
+													</a>
+												</h2>
+
 											</div>
-											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
+
+											<button class="cancel-btn"
+													type="button">
+												<i class="fa fa-trash"></i>
+											</button>
+
 										</div>
+										<!-- /Cart Product -->
+
+
+										<!-- Cart Product -->
 										<div class="product product-widget">
+
 											<div class="product-thumb">
-												<img src="{% static './img/thumb-product01.jpg' %}" alt="">
+												<img src="{% static './img/thumb-product01.jpg' %}"
+													alt="{% translate 'Product image' %}">
 											</div>
+
 											<div class="product-body">
-												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
-												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+
+												<h3 class="product-price">
+													$32.50
+
+													<span class="qty">
+														x3
+													</span>
+												</h3>
+
+												<h2 class="product-name">
+													<a href="#">
+														{% translate "Product Name Goes Here" %}
+													</a>
+												</h2>
+
 											</div>
-											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
+
+											<button class="cancel-btn"
+													type="button">
+												<i class="fa fa-trash"></i>
+											</button>
+
 										</div>
+										<!-- /Cart Product -->
+
+
 									</div>
+
+
 									<div class="shopping-cart-btns">
-										<button class="main-btn">View Cart</button>
-										<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
+
+										<button class="main-btn"
+												type="button">
+											{% translate "View Cart" %}
+										</button>
+
+										<button class="primary-btn"
+												type="button">
+
+											{% translate "Checkout" %}
+
+											<i class="fa fa-arrow-circle-right"></i>
+
+										</button>
+
 									</div>
+
 								</div>
+
 							</div>
+
 						</li>
 						<!-- /Cart -->
 
-						<!-- Mobile nav toggle-->
+
+						<!-- Mobile nav toggle -->
 						<li class="nav-toggle">
-							<button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
+
+							<button class="nav-toggle-btn main-btn icon-btn"
+									type="button">
+
+								<i class="fa fa-bars"></i>
+
+							</button>
+
 						</li>
-						<!-- / Mobile nav toggle -->
+						<!-- /Mobile nav toggle -->
+
 					</ul>
+
 				</div>
+
 			</div>
-			<!-- header -->
 		</div>
-		<!-- container -->
+		<!-- /Header -->
 	</header>
 	<!-- /HEADER -->
 
+
 	<!-- NAVIGATION -->
 	<div id="navigation">
+
 		<!-- container -->
 		<div class="container">
-			<div id="responsive-nav">
-				<!-- category nav -->
-				<div class="category-nav show-on-click">
-					<span class="category-header">Categories <i class="fa fa-list"></i></span>
-					
-					<ul class="category-list">
-						<li class="dropdown side-dropdown">
-						
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women’s Clothing <i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									
-								</div>
-						
-							</div>
-						</li>
-						
-						
-						
-						<li><a href="#">Men’s Clothing</a></li>
-						<li class="dropdown side-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Phones & Accessories <i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-									<div class="col-md-4 hidden-sm hidden-xs">
-										<a class="banner banner-2" href="#">
-											<img src="{% static './img/banner04.jpg' %}" alt="">
-											<div class="banner-caption">
-												<h3 class="white-color">NEW<br>COLLECTION</h3>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li><a href="#">Computer & Office</a></li>
-						<li><a href="#">Consumer Electronics</a></li>
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Jewelry & Watches <i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li><a href="#">Bags & Shoes</a></li>
-						<li><a href="#">View All</a></li>
-					</ul>
-				</div>
-				<!-- /category nav -->
 
-				<!-- menu nav -->
-				<div class="menu-nav">
-					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
-					<ul class="menu-list">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Shop</a></li>
-						<li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women <i class="fa fa-caret-down"></i></a>
+			<div id="responsive-nav">
+
+
+				<!-- Category Navigation -->
+				<div class="category-nav show-on-click">
+
+					<span class="category-header">
+						{% translate "Categories" %}
+						<i class="fa fa-list"></i>
+					</span>
+
+
+					<ul class="category-list">
+
+
+						<!-- Women's Clothing -->
+						<li class="dropdown side-dropdown">
+
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="true">
+
+								{% translate "Women's Clothing" %}
+
+								<i class="fa fa-angle-right"></i>
+
+							</a>
+
+
 							<div class="custom-menu">
+
 								<div class="row">
+
 									<div class="col-md-4">
+
 										<ul class="list-links">
+
 											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
 										</ul>
+
 										<hr class="hidden-md hidden-lg">
+
 									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
+
 								</div>
-								<div class="row hidden-sm hidden-xs">
-									<div class="col-md-12">
+
+							</div>
+
+						</li>
+						<!-- /Women's Clothing -->
+
+
+						<!-- Men's Clothing -->
+						<li>
+							<a href="#">
+								{% translate "Men's Clothing" %}
+							</a>
+						</li>
+						<!-- /Men's Clothing -->
+
+
+						<!-- Phones & Accessories -->
+						<li class="dropdown side-dropdown">
+
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="true">
+
+								{% translate "Phones & Accessories" %}
+
+								<i class="fa fa-angle-right"></i>
+
+							</a>
+
+
+							<div class="custom-menu">
+
+								<div class="row">
+
+
+									<div class="col-md-4">
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+
 										<hr>
-										<a class="banner banner-1" href="#">
-											<img src="{% static './img/banner05.jpg' %}" alt="">
-											<div class="banner-caption text-center">
-												<h2 class="white-color">NEW COLLECTION</h2>
-												<h3 class="white-color font-weak">HOT DEAL</h3>
+
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+										<hr class="hidden-md hidden-lg">
+
+									</div>
+
+
+									<div class="col-md-4">
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+
+										<hr>
+
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+									</div>
+
+
+									<div class="col-md-4 hidden-sm hidden-xs">
+
+										<a class="banner banner-2"
+										href="#">
+
+											<img src="{% static './img/banner04.jpg' %}"
+												alt="{% translate 'New collection banner' %}">
+
+											<div class="banner-caption">
+
+												<h3 class="white-color">
+													{% translate "NEW" %}
+													<br>
+													{% translate "COLLECTION" %}
+												</h3>
+
 											</div>
+
 										</a>
+
 									</div>
+
 								</div>
+
 							</div>
+
 						</li>
-						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Men <i class="fa fa-caret-down"></i></a>
+						<!-- /Phones & Accessories -->
+
+
+						<li>
+							<a href="#">
+								{% translate "Computer & Office" %}
+							</a>
+						</li>
+
+
+						<li>
+							<a href="#">
+								{% translate "Consumer Electronics" %}
+							</a>
+						</li>
+
+
+						<!-- Jewelry & Watches -->
+						<li class="dropdown side-dropdown">
+
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="true">
+
+								{% translate "Jewelry & Watches" %}
+
+								<i class="fa fa-angle-right"></i>
+
+							</a>
+
+
 							<div class="custom-menu">
+
 								<div class="row">
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="{% static './img/banner06.jpg' %}" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Women’s</h3>
-												</div>
-											</a>
-											<hr>
-										</div>
+
+
+									<div class="col-md-4">
+
 										<ul class="list-links">
+
 											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
 										</ul>
-									</div>
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="{% static './img/banner07.jpg' %}" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Men’s</h3>
-												</div>
-											</a>
-										</div>
+
+
 										<hr>
+
+
 										<ul class="list-links">
+
 											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
 										</ul>
+
 									</div>
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="{% static './img/banner08.jpg' %}" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Accessories</h3>
-												</div>
-											</a>
-										</div>
+
+
+									<div class="col-md-4">
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+
 										<hr>
+
+
 										<ul class="list-links">
+
 											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
 										</ul>
+
+										<hr class="hidden-md hidden-lg">
+
 									</div>
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="{% static './img/banner09.jpg' %}" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Bags</h3>
-												</div>
-											</a>
-										</div>
+
+
+									<div class="col-md-4">
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+
 										<hr>
+
+
 										<ul class="list-links">
+
 											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
 										</ul>
+
 									</div>
+
 								</div>
+
 							</div>
+
 						</li>
-						<li><a href="#">Sales</a></li>
-						<li class="dropdown default-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Pages <i class="fa fa-caret-down"></i></a>
-							<ul class="custom-menu">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="products.html">Products</a></li>
-								<li><a href="product-page.html">Product Details</a></li>
-								<li><a href="checkout.html">Checkout</a></li>
-							</ul>
+						<!-- /Jewelry & Watches -->
+
+
+						<li>
+							<a href="#">
+								{% translate "Bags & Shoes" %}
+							</a>
 						</li>
+
+
+						<li>
+							<a href="#">
+								{% translate "View All" %}
+							</a>
+						</li>
+
 					</ul>
+
 				</div>
-				<!-- menu nav -->
+				<!-- /Category Navigation -->
+
+
+
+				<!-- Menu Navigation -->
+				<div class="menu-nav">
+
+					<span class="menu-header">
+						{% translate "Menu" %}
+						<i class="fa fa-bars"></i>
+					</span>
+
+
+					<ul class="menu-list">
+
+						<li>
+							<a href="{% url 'home' %}">
+								{% translate "Home" %}
+							</a>
+						</li>
+
+
+						<li>
+							<a href="#">
+								{% translate "Shop" %}
+							</a>
+						</li>
+
+
+						<!-- Women -->
+						<li class="dropdown mega-dropdown">
+
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="true">
+
+								{% translate "Women" %}
+
+								<i class="fa fa-caret-down"></i>
+
+							</a>
+
+
+							<div class="custom-menu">
+
+								<div class="row">
+
+
+									<div class="col-md-4">
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+										<hr class="hidden-md hidden-lg">
+
+									</div>
+
+
+									<div class="col-md-4">
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+										<hr class="hidden-md hidden-lg">
+
+									</div>
+
+
+									<div class="col-md-4">
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+									</div>
+
+								</div>
+
+
+								<div class="row hidden-sm hidden-xs">
+
+									<div class="col-md-12">
+
+										<hr>
+
+										<a class="banner banner-1"
+										href="#">
+
+											<img src="{% static './img/banner05.jpg' %}"
+												alt="{% translate 'New collection banner' %}">
+
+											<div class="banner-caption text-center">
+
+												<h2 class="white-color">
+													{% translate "NEW COLLECTION" %}
+												</h2>
+
+												<h3 class="white-color font-weak">
+													{% translate "HOT DEAL" %}
+												</h3>
+
+											</div>
+
+										</a>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</li>
+						<!-- /Women -->
+
+
+
+						<!-- Men -->
+						<li class="dropdown mega-dropdown full-width">
+
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="true">
+
+								{% translate "Men" %}
+
+								<i class="fa fa-caret-down"></i>
+
+							</a>
+
+
+							<div class="custom-menu">
+
+								<div class="row">
+
+
+									<!-- Women's -->
+									<div class="col-md-3">
+
+										<div class="hidden-sm hidden-xs">
+
+											<a class="banner banner-1"
+											href="#">
+
+												<img src="{% static './img/banner06.jpg' %}"
+													alt="{% translate 'Women collection' %}">
+
+												<div class="banner-caption text-center">
+
+													<h3 class="white-color text-uppercase">
+														{% translate "Women's" %}
+													</h3>
+
+												</div>
+
+											</a>
+
+											<hr>
+
+										</div>
+
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+									</div>
+									<!-- /Women's -->
+
+
+									<!-- Men's -->
+									<div class="col-md-3">
+
+										<div class="hidden-sm hidden-xs">
+
+											<a class="banner banner-1"
+											href="#">
+
+												<img src="{% static './img/banner07.jpg' %}"
+													alt="{% translate 'Men collection' %}">
+
+												<div class="banner-caption text-center">
+
+													<h3 class="white-color text-uppercase">
+														{% translate "Men's" %}
+													</h3>
+
+												</div>
+
+											</a>
+
+										</div>
+
+										<hr>
+
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+									</div>
+									<!-- /Men's -->
+
+
+									<!-- Accessories -->
+									<div class="col-md-3">
+
+										<div class="hidden-sm hidden-xs">
+
+											<a class="banner banner-1"
+											href="#">
+
+												<img src="{% static './img/banner08.jpg' %}"
+													alt="{% translate 'Accessories collection' %}">
+
+												<div class="banner-caption text-center">
+
+													<h3 class="white-color text-uppercase">
+														{% translate "Accessories" %}
+													</h3>
+
+												</div>
+
+											</a>
+
+										</div>
+
+										<hr>
+
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+									</div>
+									<!-- /Accessories -->
+
+
+									<!-- Bags -->
+									<div class="col-md-3">
+
+										<div class="hidden-sm hidden-xs">
+
+											<a class="banner banner-1"
+											href="#">
+
+												<img src="{% static './img/banner09.jpg' %}"
+													alt="{% translate 'Bags collection' %}">
+
+												<div class="banner-caption text-center">
+
+													<h3 class="white-color text-uppercase">
+														{% translate "Bags" %}
+													</h3>
+
+												</div>
+
+											</a>
+
+										</div>
+
+										<hr>
+
+
+										<ul class="list-links">
+
+											<li>
+												<h3 class="list-links-title">
+													{% translate "Categories" %}
+												</h3>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Women's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Men's Clothing" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Phones & Accessories" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Jewelry & Watches" %}
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													{% translate "Bags & Shoes" %}
+												</a>
+											</li>
+
+										</ul>
+
+									</div>
+									<!-- /Bags -->
+
+								</div>
+
+							</div>
+
+						</li>
+						<!-- /Men -->
+
+
+						<li>
+							<a href="#">
+								{% translate "Sales" %}
+							</a>
+						</li>
+
+
+						<!-- Pages -->
+						<li class="dropdown default-dropdown">
+
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							aria-expanded="true">
+
+								{% translate "Pages" %}
+
+								<i class="fa fa-caret-down"></i>
+
+							</a>
+
+
+							<ul class="custom-menu">
+
+								<li>
+									<a href="{% url 'home' %}">
+										{% translate "Home" %}
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										{% translate "Products" %}
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										{% translate "Product Details" %}
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										{% translate "Checkout" %}
+									</a>
+								</li>
+
+							</ul>
+
+						</li>
+						<!-- /Pages -->
+
+					</ul>
+
+				</div>
+				<!-- /Menu Navigation -->
+
 			</div>
+
 		</div>
 		<!-- /container -->
+
 	</div>
 	<!-- /NAVIGATION -->
-
-	<!-- BREADCRUMB -->
-	<div id="breadcrumb">
-		<div class="container">
-			<ul class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li class="active">Blank</li>
-			</ul>
-		</div>
-	</div>
-	<!-- /BREADCRUMB -->
 
 	{% block content %}
 	
@@ -548,26 +1661,42 @@
 
 	<!-- FOOTER -->
 	<footer id="footer" class="section section-grey">
-		<!-- container -->
+
 		<div class="container">
-			<!-- row -->
+
 			<div class="row">
+
 				<div class="col-md-8 col-md-offset-2 text-center">
-					<!-- footer copyright -->
+
 					<div class="footer-copyright">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright ©<script>document.write(new Date().getFullYear());</script>2026 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+						{% translate "Copyright" %}
+						©{% now "Y" %}
+						{% translate "All rights reserved" %}
+						|
+
+						{% translate "This template is made with" %}
+
+						<i class="fa fa-heart-o" aria-hidden="true"></i>
+
+						{% translate "by" %}
+
+						<a href="https://colorlib.com"
+						target="_blank"
+						rel="noopener noreferrer">
+							Colorlib
+						</a>
+
 					</div>
-					<!-- /footer copyright -->
+
 				</div>
+
 			</div>
-			<!-- /row -->
+
 		</div>
-		<!-- /container -->
+
 	</footer>
 	<!-- /FOOTER -->
-
 
 	<!-- jQuery Plugins -->
 	<script src="{% static 'js/jquery.min.js' %}"></script>
