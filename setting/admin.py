@@ -12,6 +12,7 @@ class SiteNameAdmin(admin.ModelAdmin):
             return False
         return super().has_add_permission(request)
 
+
 @admin.register(Logo)
 class LogoAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "image_tag", "status", "created_at", "updated_at")
@@ -25,7 +26,6 @@ class LogoAdmin(admin.ModelAdmin):
             {"fields": ("title", "image", "image_tag", "status", "created_at", "updated_at"),},
         ),
     )
-
 
 
 @admin.register(Footer)
@@ -45,14 +45,16 @@ class FooterAdmin(admin.ModelAdmin):
 
 @admin.register(Link)
 class LinkAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "url", "status", "created_at", "updated_at")
+    list_display = ("id", "footer", "title", "url", "status", "created_at", "updated_at")
+
     list_display_links = ("id", "title")
+
     list_filter = ("status", "created_at", "updated_at")
+
     search_fields = ("title", "url")
+
     readonly_fields = ("created_at", "updated_at")
 
     fieldsets = (
-        (None, {
-            "fields": ("title", "url", "status"),
-        }),
+        (None, {"fields": ("footer", "title", "url", "status"),}),
     )
