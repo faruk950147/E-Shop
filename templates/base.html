@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title> {% block title %}{% endblock title %}</title>
+	<title>{% translate "E-SHOP" %} {% block title %}{% endblock title %}</title>
 	
 	<link rel="icon" href="{% static "img/favicon.ico" %}">
 
@@ -589,12 +589,12 @@
 			<!-- row -->
 			<div class="row">
 				
-				{% if footer %}
+				{% if site_footer %}
 				<!-- Company Info / Logo -->
 				<div class="col-md-3">
 					<div class="footer-widget">
 						<h3 class="footer-title">About Us</h3>
-						<p>{{ footer.about_text|default:"" }}</p>
+						<p>{{ site_footer.about_text|default:"" }}</p>
 					</div>
 				</div>
 				{% endif %}
