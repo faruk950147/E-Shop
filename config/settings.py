@@ -27,7 +27,6 @@ BASE_URL = os.getenv(
 # Installed Applications
 # =========================
 INSTALLED_APPS = [
-    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -36,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third-party apps
+    'modeltranslation',
     'rest_framework',  # DRF
     # 'rest_framework.authtoken',  # Token auth
     'corsheaders',  # CORS
@@ -118,29 +118,31 @@ AUTH_PASSWORD_VALIDATORS = [
 # =========================
 # Internationalization
 # =========================
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'Asia/Dhaka'
+
+LANGUAGE_CODE = "en-us"
+
+TIME_ZONE = "Asia/Dhaka"
+
 USE_I18N = True
 USE_TZ = True
-LANGUAGE_BIDI = False  # Set to True for RTL languages, False otherwise
 
 LANGUAGES = [
-    ('en', 'English'),
-    ('bn', 'Bangla'),
+    ("en", "English"),
+    ("bn", "বাংলা"),
 ]
+
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale')
+    BASE_DIR / "locale",
 ]
-PARLER_LANGUAGES = {
-    1: (
-        {'code': 'en'},
-        {'code': 'bn'},
-    ),
-    'default': {
-        'fallback': 'bn',  # Fallback to Bangla if English is missing
-        'hide_untranslated': False,
-    }
-}
+
+
+# django-modeltranslation
+MODELTRANSLATION_DEFAULT_LANGUAGE = "en"
+
+MODELTRANSLATION_LANGUAGES = (
+    "en",
+    "bn",
+)
 
 # =========================
 # Static & Media files
