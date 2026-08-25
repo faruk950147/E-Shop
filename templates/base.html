@@ -51,15 +51,13 @@
 						<li><a href="#"> {% translate "Newsletter" %} </a></li>
 						<li><a href="#"> {% translate "FAQ" %} </a></li>
 						<li class="dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="cursor: pointer;">
 								{% get_current_language as CURRENT_LANGUAGE %}
-
-								{% if CURRENT_LANGUAGE == "en" %}
+								{% if CURRENT_LANGUAGE == 'bn' %}
+									বাং
+								{% else %}
 									ENG
-								{% elif CURRENT_LANGUAGE == "bn" %}
-									BAN
 								{% endif %}
-
 								<i class="fa fa-caret-down"></i>
 							</a>
 
@@ -67,41 +65,20 @@
 								<li>
 									<form action="{% url 'set_language' %}" method="post">
 										{% csrf_token %}
-										<input type="hidden" name="language" value="en">
-										<input type="hidden" name="next" value="{{ request.get_full_path }}">
-										<button
-											type="submit"
-											style="
-												border: none;
-												outline: none;
-												background: none;
-												padding: 0;
-												text-align: center;
-												cursor: pointer;
-											"
-										>
-										ENG
+										<input name="next" type="hidden" value="{{ redirect_to }}">
+										<input name="language" type="hidden" value="en">
+										<button type="submit" style="border: none; background: none; padding: 0; cursor: pointer; width: 100%; text-align: left;">
+											ENG
 										</button>
 									</form>
 								</li>
-
 								<li>
 									<form action="{% url 'set_language' %}" method="post">
 										{% csrf_token %}
-										<input type="hidden" name="language" value="bn">
-										<input type="hidden" name="next" value="{{ request.get_full_path }}">
-										<button
-											type="submit"
-											style="
-												border: none;
-												outline: none;
-												background: none;
-												padding: 0;
-												text-align: center;
-												cursor: pointer;
-											"
-										>
-											BNG
+										<input name="next" type="hidden" value="{{ redirect_to }}">
+										<input name="language" type="hidden" value="bn">
+										<button type="submit" style="border: none; background: none; padding: 0; cursor: pointer; width: 100%; text-align: left;">
+											বাং
 										</button>
 									</form>
 								</li>
