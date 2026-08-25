@@ -19,7 +19,7 @@ class SiteName(StripMixin, SingletonMixin, BaseMixin):
 
 
 class Logo(StripMixin, SingletonMixin, BaseMixin, ImageTagMixin):
-    title = models.CharField(_('title'), unique=True, max_length=150)
+    title = models.CharField(_('title'), unique=True, max_length=150, help_text='Site Logo')
     image = models.ImageField(
         _("image"),
         upload_to="logo/%Y/%m/%d/",
