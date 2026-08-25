@@ -409,13 +409,9 @@
 										<div class="row">
 											<div class="col-md-4">
 												<ul class="list-links">
-													<li>
-														<h3 class="list-links-title">{% translate "Subcategories" %}</h3>
-													</li>
+													<li><h3 class="list-links-title">{% translate "Subcategories" %}</h3></li>
 													{% for child in category.children.all %}
-														<li>
-															<a href="">{{ child.title }}</a>
-														</li>
+														<li><a href="">{{ child.title }}</a></li>
 													{% endfor %}
 												</ul>
 											</div>

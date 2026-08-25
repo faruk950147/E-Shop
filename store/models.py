@@ -23,15 +23,6 @@ from validation.validators import (
     validate_image_size, validate_file_extension
 )
 
-# ======================== CATEGORY ========================
-from django.core.exceptions import ValidationError
-from django.db import models
-from django.utils.translation import gettext_lazy as _
-
-from common.common import BaseMixin, CommonMixin
-from mixins.mixins import ImageTagMixin, StripMixin
-from validation.validators import validate_file_extension, validate_image_size
-
 
 # ======================== CATEGORY ========================
 class Category(StripMixin, BaseMixin, CommonMixin, ImageTagMixin):
