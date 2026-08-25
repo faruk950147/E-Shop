@@ -1,14 +1,14 @@
-# English Translation File
+# English translation for E-SHOP.
 # Copyright (C) 2026
-# Faruk Ahmed
+# This file is distributed under the same license as the E-SHOP package.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: E-SHOP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 11:54+0600\n"
-"PO-Revision-Date: 2026-08-25 12:00+0600\n"
-"Last-Translator: Faruk Ahmed\n"
+"POT-Creation-Date: 2026-08-25 14:08+0600\n"
+"PO-Revision-Date: 2026-08-25 14:08+0600\n"
+"Last-Translator: \n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -85,90 +85,25 @@ msgstr "description"
 msgid "Only one %(model)s instance is allowed."
 msgstr "Only one %(model)s instance is allowed."
 
-#: .\setting\models.py:10 .\setting\models.py:22 .\setting\models.py:86
-#: .\store\models.py:31
+#: .\setting\models.py:11 .\store\models.py:31
 msgid "title"
 msgstr "title"
 
-#: .\setting\models.py:13
-msgid "Site Name"
-msgstr "Site Name"
-
-#: .\setting\models.py:14
-msgid "01. Site Name"
-msgstr "01. Site Name"
-
-#: .\setting\models.py:24 .\store\models.py:33
+#: .\setting\models.py:13 .\store\models.py:33
 msgid "image"
 msgstr "image"
 
-#: .\setting\models.py:31
+#: .\setting\models.py:20
 msgid "Logo"
 msgstr "Logo"
 
-#: .\setting\models.py:32
+#: .\setting\models.py:21
 msgid "02. Logo"
 msgstr "02. Logo"
 
-#: .\setting\models.py:41
-msgid "about text"
-msgstr "About text"
-
-#: .\setting\models.py:44
-msgid "Short description about the company"
-msgstr "Short description about the company"
-
-#: .\setting\models.py:47
-msgid "address"
-msgstr "Address"
-
-#: .\setting\models.py:53
-msgid "phone"
-msgstr "Phone"
-
-#: .\setting\models.py:59
-msgid "email"
-msgstr "Email"
-
-#: .\setting\models.py:64
-msgid "copyright text"
-msgstr "Copyright text"
-
-#: .\setting\models.py:67
-msgid "Custom copyright notice line"
-msgstr "Custom copyright notice line"
-
-#: .\setting\models.py:71
-msgid "Footer"
-msgstr "Footer"
-
-#: .\setting\models.py:72
-msgid "03. Footer"
-msgstr "03. Footer"
-
-#: .\setting\models.py:88
-msgid "e.g. Quick Links, Legal, Policies"
-msgstr "e.g. Quick Links, Legal, Policies"
-
-#: .\setting\models.py:91
-msgid "url"
-msgstr "URL"
-
-#: .\setting\models.py:93
-msgid "Target URL or path (e.g. /about-us/ or https://example.com)"
-msgstr "Target URL or path (e.g. /about-us/ or https://example.com)"
-
-#: .\setting\models.py:97
-msgid "Link"
-msgstr "Link"
-
-#: .\setting\models.py:98
-msgid "04. Links"
-msgstr "04. Links"
-
 #: .\store\models.py:37
 msgid "is_featured"
-msgstr "Featured"
+msgstr "is_featured"
 
 #: .\store\views.py:9
 msgid "Hello, world!"
@@ -177,6 +112,26 @@ msgstr "Hello, world!"
 #: .\templates\base.html:12
 msgid "E-SHOP"
 msgstr "E-SHOP"
+
+#: .\templates\base.html:45
+msgid "Welcome to E-SHOP"
+msgstr "Welcome to E-SHOP"
+
+#: .\templates\base.html
+msgid "Store"
+msgstr "Store"
+
+#: .\templates\base.html
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: .\templates\base.html
+msgid "FAQ"
+msgstr "FAQ"
+
+#: .\templates\store\home.html:6
+msgid "Home"
+msgstr "Home"
 
 #: .\validation\validators.py:10
 msgid "Enter a valid phone number"

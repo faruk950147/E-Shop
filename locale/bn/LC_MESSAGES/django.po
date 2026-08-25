@@ -1,14 +1,14 @@
-# Bangla Translation File
+# Bengali translation for E-SHOP.
 # Copyright (C) 2026
-# Faruk Ahmed
+# This file is distributed under the same license as the E-SHOP package.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: E-SHOP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 11:54+0600\n"
-"PO-Revision-Date: 2026-08-25 12:00+0600\n"
-"Last-Translator: Faruk Ahmed\n"
+"POT-Creation-Date: 2026-08-25 14:08+0600\n"
+"PO-Revision-Date: 2026-08-25 14:08+0600\n"
+"Last-Translator: \n"
 "Language-Team: Bengali\n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
@@ -54,19 +54,19 @@ msgstr "বৈশিষ্ট্য"
 
 #: .\common\common.py:28
 msgid "Promotion"
-msgstr "প্রমোশন"
+msgstr "প্রচার"
 
 #: .\common\common.py:39
 msgid "status"
-msgstr "অবস্থা"
+msgstr "স্ট্যাটাস"
 
 #: .\common\common.py:40
 msgid "created_at"
-msgstr "তৈরির তারিখ ও সময়"
+msgstr "তৈরির সময়"
 
 #: .\common\common.py:41
 msgid "updated_at"
-msgstr "সংশোধনের তারিখ ও সময়"
+msgstr "আপডেটের সময়"
 
 #: .\common\common.py:49
 msgid "slug"
@@ -83,92 +83,27 @@ msgstr "বিবরণ"
 #: .\common\common.py:82
 #, python-format
 msgid "Only one %(model)s instance is allowed."
-msgstr "শুধুমাত্র একটি %(model)s রাখা যাবে।"
+msgstr "শুধুমাত্র একটি %(model)s অবজেক্ট অনুমোদিত।"
 
-#: .\setting\models.py:10 .\setting\models.py:22 .\setting\models.py:86
-#: .\store\models.py:31
+#: .\setting\models.py:11 .\store\models.py:31
 msgid "title"
 msgstr "শিরোনাম"
 
-#: .\setting\models.py:13
-msgid "Site Name"
-msgstr "সাইটের নাম"
-
-#: .\setting\models.py:14
-msgid "01. Site Name"
-msgstr "০১. সাইটের নাম"
-
-#: .\setting\models.py:24 .\store\models.py:33
+#: .\setting\models.py:13 .\store\models.py:33
 msgid "image"
 msgstr "ছবি"
 
-#: .\setting\models.py:31
+#: .\setting\models.py:20
 msgid "Logo"
 msgstr "লোগো"
 
-#: .\setting\models.py:32
+#: .\setting\models.py:21
 msgid "02. Logo"
 msgstr "০২. লোগো"
 
-#: .\setting\models.py:41
-msgid "about text"
-msgstr "আমাদের সম্পর্কে"
-
-#: .\setting\models.py:44
-msgid "Short description about the company"
-msgstr "কোম্পানি সম্পর্কে সংক্ষিপ্ত বিবরণ"
-
-#: .\setting\models.py:47
-msgid "address"
-msgstr "ঠিকানা"
-
-#: .\setting\models.py:53
-msgid "phone"
-msgstr "ফোন"
-
-#: .\setting\models.py:59
-msgid "email"
-msgstr "ইমেইল"
-
-#: .\setting\models.py:64
-msgid "copyright text"
-msgstr "কপিরাইট তথ্য"
-
-#: .\setting\models.py:67
-msgid "Custom copyright notice line"
-msgstr "কাস্টম কপিরাইট নোটিশ"
-
-#: .\setting\models.py:71
-msgid "Footer"
-msgstr "ফুটার"
-
-#: .\setting\models.py:72
-msgid "03. Footer"
-msgstr "০৩. ফুটার"
-
-#: .\setting\models.py:88
-msgid "e.g. Quick Links, Legal, Policies"
-msgstr "যেমন: দ্রুত লিংক, আইনগত তথ্য, নীতিমালা"
-
-#: .\setting\models.py:91
-msgid "url"
-msgstr "URL"
-
-#: .\setting\models.py:93
-msgid "Target URL or path (e.g. /about-us/ or https://example.com)"
-msgstr "টার্গেট URL অথবা পাথ (যেমন: /about-us/ অথবা https://example.com)"
-
-#: .\setting\models.py:97
-msgid "Link"
-msgstr "লিংক"
-
-#: .\setting\models.py:98
-msgid "04. Links"
-msgstr "০৪. লিংকসমূহ"
-
 #: .\store\models.py:37
 msgid "is_featured"
-msgstr "বিশেষভাবে প্রদর্শিত"
+msgstr "ফিচার্ড"
 
 #: .\store\views.py:9
 msgid "Hello, world!"
@@ -177,6 +112,26 @@ msgstr "হ্যালো, বিশ্ব!"
 #: .\templates\base.html:12
 msgid "E-SHOP"
 msgstr "ই-শপ"
+
+#: .\templates\base.html:45
+msgid "Welcome to E-SHOP"
+msgstr "ই-শপে স্বাগতম"
+
+#: .\templates\base.html
+msgid "Store"
+msgstr "স্টোর"
+
+#: .\templates\base.html
+msgid "Newsletter"
+msgstr "নিউজলেটার"
+
+#: .\templates\base.html
+msgid "FAQ"
+msgstr "প্রায়শই জিজ্ঞাসিত প্রশ্নাবলি"
+
+#: .\templates\store\home.html:6
+msgid "Home"
+msgstr "হোম"
 
 #: .\validation\validators.py:10
 msgid "Enter a valid phone number"

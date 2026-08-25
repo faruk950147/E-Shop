@@ -976,3 +976,165 @@ Traceback (most recent call last):
     from .models import SiteName, Logo, Footer
 ImportError: cannot import name 'SiteName' from 'setting.models' (C:\Users\Omar Faruk\Desktop\E-Shop\setting\models.py)
 [ERROR] 2026-08-25 13:43:33,529 django.server - "GET /en/ HTTP/1.1" 500 169846
+[ERROR] 2026-08-25 13:56:39,200 django.request - Internal Server Error: /en/
+Traceback (most recent call last):
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\store\views.py", line 11, in get
+    return render(request, "store/home.html", {"message": message})
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 170, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python 3\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\context.py", line 256, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "C:\Python 3\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1395, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1023, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\setting\context_processors.py", line 1, in <module>
+    from setting.models import Logo, Footer
+ImportError: cannot import name 'Footer' from 'setting.models' (C:\Users\Omar Faruk\Desktop\E-Shop\setting\models.py)
+[ERROR] 2026-08-25 13:56:39,213 django.server - "GET /en/ HTTP/1.1" 500 170040
+[ERROR] 2026-08-25 13:57:59,382 django.request - Internal Server Error: /en/
+Traceback (most recent call last):
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\store\views.py", line 11, in get
+    return render(request, "store/home.html", {"message": message})
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 170, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python 3\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\context.py", line 256, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "C:\Python 3\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1395, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1023, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\setting\context_processors.py", line 1, in <module>
+    from setting.models import Logo, Footer
+ImportError: cannot import name 'Footer' from 'setting.models' (C:\Users\Omar Faruk\Desktop\E-Shop\setting\models.py)
+[ERROR] 2026-08-25 13:57:59,386 django.server - "GET /en/ HTTP/1.1" 500 170040
+[ERROR] 2026-08-25 13:58:01,390 django.request - Internal Server Error: /en/
+Traceback (most recent call last):
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\store\views.py", line 11, in get
+    return render(request, "store/home.html", {"message": message})
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 170, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python 3\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\context.py", line 256, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "C:\Python 3\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1395, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1023, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\setting\context_processors.py", line 1, in <module>
+    from setting.models import Logo, Footer
+ImportError: cannot import name 'Footer' from 'setting.models' (C:\Users\Omar Faruk\Desktop\E-Shop\setting\models.py)
+[ERROR] 2026-08-25 13:58:01,395 django.server - "GET /en/ HTTP/1.1" 500 170040
