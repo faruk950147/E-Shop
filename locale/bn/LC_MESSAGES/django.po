@@ -1,4 +1,4 @@
-# Bn file
+# Bn File
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 20:49+0600\n"
+"POT-Creation-Date: 2026-08-25 21:17+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Bengali <LL@li.org>\n"
@@ -163,202 +163,109 @@ msgstr "পণ্যের নাম এখানে হবে"
 msgid "View Cart"
 msgstr "কার্ট দেখুন"
 
-#: .\templates\base.html:365 .\templates\base.html:1636
+#: .\templates\base.html:365
 msgid "Checkout"
 msgstr "চেকআউট"
 
-#: .\templates\base.html:418 .\templates\base.html:450
-#: .\templates\base.html:532 .\templates\base.html:576
-#: .\templates\base.html:623 .\templates\base.html:667
-#: .\templates\base.html:775 .\templates\base.html:819
-#: .\templates\base.html:864 .\templates\base.html:908
-#: .\templates\base.html:955 .\templates\base.html:999
-#: .\templates\base.html:1115 .\templates\base.html:1162
-#: .\templates\base.html:1209 .\templates\base.html:1336
-#: .\templates\base.html:1406 .\templates\base.html:1476
-#: .\templates\base.html:1546
+#: .\templates\base.html:411 .\templates\base.html:437
+#: .\templates\base.html:517 .\templates\base.html:561
+#: .\templates\base.html:608 .\templates\base.html:652
+#: .\templates\base.html:757 .\templates\base.html:801
+#: .\templates\base.html:846 .\templates\base.html:890
+#: .\templates\base.html:937 .\templates\base.html:981
 msgid "Categories"
 msgstr "ক্যাটাগরি সমূহ"
 
-#: .\templates\base.html:433 .\templates\base.html:456
-#: .\templates\base.html:538 .\templates\base.html:582
-#: .\templates\base.html:629 .\templates\base.html:673
-#: .\templates\base.html:781 .\templates\base.html:825
-#: .\templates\base.html:870 .\templates\base.html:914
-#: .\templates\base.html:961 .\templates\base.html:1005
-#: .\templates\base.html:1121 .\templates\base.html:1168
-#: .\templates\base.html:1215 .\templates\base.html:1342
-#: .\templates\base.html:1412 .\templates\base.html:1482
-#: .\templates\base.html:1552
+#: .\templates\base.html:420 .\templates\base.html:443
+#: .\templates\base.html:523 .\templates\base.html:567
+#: .\templates\base.html:614 .\templates\base.html:658
+#: .\templates\base.html:763 .\templates\base.html:807
+#: .\templates\base.html:852 .\templates\base.html:896
+#: .\templates\base.html:943 .\templates\base.html:987
 msgid "Women's Clothing"
 msgstr "নারীদের পোশাক"
 
-#: .\templates\base.html:462 .\templates\base.html:501
-#: .\templates\base.html:544 .\templates\base.html:588
-#: .\templates\base.html:635 .\templates\base.html:679
-#: .\templates\base.html:787 .\templates\base.html:831
-#: .\templates\base.html:876 .\templates\base.html:920
-#: .\templates\base.html:967 .\templates\base.html:1011
-#: .\templates\base.html:1127 .\templates\base.html:1174
-#: .\templates\base.html:1221 .\templates\base.html:1348
-#: .\templates\base.html:1418 .\templates\base.html:1488
-#: .\templates\base.html:1558
+#: .\templates\base.html:449 .\templates\base.html:487
+#: .\templates\base.html:529 .\templates\base.html:573
+#: .\templates\base.html:620 .\templates\base.html:664
+#: .\templates\base.html:769 .\templates\base.html:813
+#: .\templates\base.html:858 .\templates\base.html:902
+#: .\templates\base.html:949 .\templates\base.html:993
 msgid "Men's Clothing"
 msgstr "পুরুষদের পোশাক"
 
-#: .\templates\base.html:468 .\templates\base.html:514
-#: .\templates\base.html:550 .\templates\base.html:594
-#: .\templates\base.html:641 .\templates\base.html:685
-#: .\templates\base.html:793 .\templates\base.html:837
-#: .\templates\base.html:882 .\templates\base.html:926
-#: .\templates\base.html:973 .\templates\base.html:1017
-#: .\templates\base.html:1133 .\templates\base.html:1180
-#: .\templates\base.html:1227 .\templates\base.html:1354
-#: .\templates\base.html:1424 .\templates\base.html:1494
-#: .\templates\base.html:1564
+#: .\templates\base.html:455 .\templates\base.html:499
+#: .\templates\base.html:535 .\templates\base.html:579
+#: .\templates\base.html:626 .\templates\base.html:670
+#: .\templates\base.html:775 .\templates\base.html:819
+#: .\templates\base.html:864 .\templates\base.html:908
+#: .\templates\base.html:955 .\templates\base.html:999
 msgid "Phones & Accessories"
 msgstr "ফোন ও অ্যাক্সেসরিজ"
 
-#: .\templates\base.html:474 .\templates\base.html:556
-#: .\templates\base.html:600 .\templates\base.html:647
-#: .\templates\base.html:691 .\templates\base.html:757
-#: .\templates\base.html:799 .\templates\base.html:843
-#: .\templates\base.html:888 .\templates\base.html:932
-#: .\templates\base.html:979 .\templates\base.html:1023
-#: .\templates\base.html:1139 .\templates\base.html:1186
-#: .\templates\base.html:1233 .\templates\base.html:1360
-#: .\templates\base.html:1430 .\templates\base.html:1500
-#: .\templates\base.html:1570
+#: .\templates\base.html:461 .\templates\base.html:541
+#: .\templates\base.html:585 .\templates\base.html:632
+#: .\templates\base.html:676 .\templates\base.html:739
+#: .\templates\base.html:781 .\templates\base.html:825
+#: .\templates\base.html:870 .\templates\base.html:914
+#: .\templates\base.html:961 .\templates\base.html:1005
 msgid "Jewelry & Watches"
 msgstr "জুয়েলারি ও ঘড়ি"
 
-#: .\templates\base.html:480 .\templates\base.html:562
-#: .\templates\base.html:606 .\templates\base.html:653
-#: .\templates\base.html:697 .\templates\base.html:805
-#: .\templates\base.html:849 .\templates\base.html:894
-#: .\templates\base.html:938 .\templates\base.html:985
-#: .\templates\base.html:1029 .\templates\base.html:1047
-#: .\templates\base.html:1145 .\templates\base.html:1192
-#: .\templates\base.html:1239 .\templates\base.html:1366
-#: .\templates\base.html:1436 .\templates\base.html:1506
-#: .\templates\base.html:1576
+#: .\templates\base.html:467 .\templates\base.html:547
+#: .\templates\base.html:591 .\templates\base.html:638
+#: .\templates\base.html:682 .\templates\base.html:787
+#: .\templates\base.html:831 .\templates\base.html:876
+#: .\templates\base.html:920 .\templates\base.html:967
+#: .\templates\base.html:1011 .\templates\base.html:1028
 msgid "Bags & Shoes"
 msgstr "ব্যাগ ও জুতো"
 
-#: .\templates\base.html:712 .\templates\base.html:1260
+#: .\templates\base.html:697
 msgid "New collection banner"
 msgstr "নতুন কালেকশন ব্যানার"
 
-#: .\templates\base.html:717
+#: .\templates\base.html:702
 msgid "NEW"
 msgstr "নতুন"
 
-#: .\templates\base.html:719
+#: .\templates\base.html:704
 msgid "COLLECTION"
 msgstr "কালেকশন"
 
-#: .\templates\base.html:738
+#: .\templates\base.html:722
 msgid "Computer & Office"
 msgstr "কম্পিউটার ও অফিস"
 
-#: .\templates\base.html:745
+#: .\templates\base.html:728
 msgid "Consumer Electronics"
 msgstr "কনজিউমার ইলেকট্রনিক্স"
 
-#: .\templates\base.html:1054
+#: .\templates\base.html:1034
 msgid "View All"
 msgstr "সব দেখুন"
 
-#: .\templates\base.html:1069
+#: .\templates\base.html:1044
 msgid "Menu"
 msgstr "মেনু"
 
-#: .\templates\base.html:1078 .\templates\base.html:1618
-#: .\templates\store\home.html:6
+#: .\templates\base.html:1047 .\templates\store\home.html:6
 msgid "Home"
 msgstr "হোম"
 
-#: .\templates\base.html:1085
-msgid "Shop"
-msgstr "শপ"
-
-#: .\templates\base.html:1097
-msgid "Women"
-msgstr "নারী"
-
-#: .\templates\base.html:1265
-msgid "NEW COLLECTION"
-msgstr "নতুন কালেকশন"
-
-#: .\templates\base.html:1269
-msgid "HOT DEAL"
-msgstr "হট ডিল"
-
-#: .\templates\base.html:1294
-msgid "Men"
-msgstr "পুরুষ"
-
-#: .\templates\base.html:1315
-msgid "Women collection"
-msgstr "উইমেন কালেকশন"
-
-#: .\templates\base.html:1320
-msgid "Women's"
-msgstr "নারীদের"
-
-#: .\templates\base.html:1385
-msgid "Men collection"
-msgstr "মেন কালেকশন"
-
-#: .\templates\base.html:1390
-msgid "Men's"
-msgstr "পুরুষদের"
-
-#: .\templates\base.html:1455
-msgid "Accessories collection"
-msgstr "অ্যাক্সেসরিজ কালেকশন"
-
-#: .\templates\base.html:1460
-msgid "Accessories"
-msgstr "অ্যাক্সেসরিজ"
-
-#: .\templates\base.html:1525
-msgid "Bags collection"
-msgstr "ব্যাগ কালেকশন"
-
-#: .\templates\base.html:1530
-msgid "Bags"
-msgstr "ব্যাগ"
-
-#: .\templates\base.html:1595
-msgid "Sales"
-msgstr "সেল"
-
-#: .\templates\base.html:1607
-msgid "Pages"
-msgstr "পেইজ"
-
-#: .\templates\base.html:1624
-msgid "Products"
-msgstr "পণ্যসমূহ"
-
-#: .\templates\base.html:1630
-msgid "Product Details"
-msgstr "পণ্যের বিবরণ"
-
-#: .\templates\base.html:1673
+#: .\templates\base.html:1072
 msgid "Copyright"
 msgstr "কপিরাইট"
 
-#: .\templates\base.html:1675
+#: .\templates\base.html:1074
 msgid "All rights reserved"
 msgstr "সর্বস্বত্ব সংরক্ষিত"
 
-#: .\templates\base.html:1678
+#: .\templates\base.html:1077
 msgid "This template is made with"
 msgstr "টেমপ্লেটটি তৈরি করা হয়েছে"
 
-#: .\templates\base.html:1682
+#: .\templates\base.html:1081
 msgid "by"
 msgstr "দ্বারা"
 
