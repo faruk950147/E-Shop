@@ -1,10 +1,7 @@
-# bn File
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Bangla Translation File
+# Copyright (C) 2026
+# Faruk Ahmed
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -57,19 +54,19 @@ msgstr "বৈশিষ্ট্য"
 
 #: .\common\common.py:28
 msgid "Promotion"
-msgstr "প্রচার"
+msgstr "প্রমোশন"
 
 #: .\common\common.py:39
 msgid "status"
-msgstr "স্ট্যাটাস"
+msgstr "অবস্থা"
 
 #: .\common\common.py:40
 msgid "created_at"
-msgstr "তৈরির সময়"
+msgstr "তৈরির তারিখ ও সময়"
 
 #: .\common\common.py:41
 msgid "updated_at"
-msgstr "আপডেটের সময়"
+msgstr "সংশোধনের তারিখ ও সময়"
 
 #: .\common\common.py:49
 msgid "slug"
@@ -86,7 +83,7 @@ msgstr "বিবরণ"
 #: .\common\common.py:82
 #, python-format
 msgid "Only one %(model)s instance is allowed."
-msgstr "শুধুমাত্র একটি %(model)s ইনস্ট্যান্স অনুমোদিত।"
+msgstr "শুধুমাত্র একটি %(model)s রাখা যাবে।"
 
 #: .\setting\models.py:16 .\setting\models.py:28 .\setting\models.py:93
 #: .\store\models.py:31
@@ -119,7 +116,7 @@ msgstr "ইমেইল"
 
 #: .\setting\models.py:69
 msgid "copyright_text"
-msgstr "কপিরাইট টেক্সট"
+msgstr "কপিরাইট তথ্য"
 
 #: .\setting\models.py:72
 msgid "Custom copyright notice line"
@@ -139,7 +136,7 @@ msgstr "এই লিংকের টার্গেট URL"
 
 #: .\store\models.py:37
 msgid "is_featured"
-msgstr "ফিচার্ড"
+msgstr "বিশেষভাবে প্রদর্শিত"
 
 #: .\store\views.py:9
 msgid "Hello, world!"

@@ -1,4 +1,7 @@
 # English Translation File
+# Copyright (C) 2026
+# Faruk Ahmed
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -93,7 +96,7 @@ msgstr "image"
 
 #: .\setting\models.py:46
 msgid "about_text"
-msgstr "about_text"
+msgstr "About Us"
 
 #: .\setting\models.py:49
 msgid "Short description about the company"
@@ -113,7 +116,7 @@ msgstr "email"
 
 #: .\setting\models.py:69
 msgid "copyright_text"
-msgstr "copyright_text"
+msgstr "Copyright Information"
 
 #: .\setting\models.py:72
 msgid "Custom copyright notice line"
@@ -125,7 +128,7 @@ msgstr "e.g. Quick Links, Legal, Policies"
 
 #: .\setting\models.py:98
 msgid "url"
-msgstr "url"
+msgstr "URL"
 
 #: .\setting\models.py:99
 msgid "Target URL for this link"
@@ -133,7 +136,7 @@ msgstr "Target URL for this link"
 
 #: .\store\models.py:37
 msgid "is_featured"
-msgstr "is_featured"
+msgstr "Featured"
 
 #: .\store\views.py:9
 msgid "Hello, world!"
