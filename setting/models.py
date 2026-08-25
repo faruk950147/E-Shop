@@ -7,7 +7,7 @@ from validation.validators import validate_image_size, validate_file_extension
 
 
 class SiteName(StripMixin, SingletonMixin, BaseMixin):
-    title = models.CharField(_('title'), unique=True, max_length=150)
+    title = models.CharField(_('title'), unique=True, max_length=150, help_text='Site Title')
 
     class Meta:
         verbose_name = _("Site Name")
