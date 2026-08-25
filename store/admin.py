@@ -28,3 +28,14 @@ class CategoryAdmin(admin.ModelAdmin):
             ),
         }),
     )
+    class Media:
+        js = (
+            "http://ajax.googleapis.com/ajax/google/code-js/jquery.min.js",
+            "http://ajax.googleapis.com/ajax/google/code-js/jquery-ui.min.js",
+            "modeltranslation/js/tabbed_translation_fields.js",
+        )
+        css = {
+            "screen": ("modeltranslation/css/tabbed_translation_fields.css",),
+        }
+
+

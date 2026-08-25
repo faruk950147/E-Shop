@@ -145,40 +145,38 @@
 					</div>
 					<!-- /Logo -->
 
-
 					<!-- Search -->
 					<div class="header-search">
-						<form>
+						<form action="" method="get">
 
 							<input class="input search-input"
+								name="q"
 								type="text"
-								placeholder="{% translate 'Enter your keyword' %}">
+								value="{{ request.GET.q }}"
+								placeholder="{% translate 'Enter your keyword' %}"
+								required>
 
-							<select class="input search-categories">
+							<select class="input search-categories" name="category">
 
-								<option value="0">
+								<option value="">
 									{% translate "All Categories" %}
 								</option>
 
-								<option value="1">
-									{% translate "Category 01" %}
-								</option>
-
-								<option value="2">
-									{% translate "Category 02" %}
-								</option>
+								{% for category in categories %}
+									<option value="{{ category.id }}" {% if request.GET.category == category.id|stringformat:"s" %}selected{% endif %}>
+										{{ category.title }}
+									</option>
+								{% endfor %}
 
 							</select>
 
-							<button class="search-btn"
-									type="submit">
+							<button class="search-btn" type="submit">
 								<i class="fa fa-search"></i>
 							</button>
 
 						</form>
 					</div>
 					<!-- /Search -->
-
 				</div>
 
 
@@ -400,635 +398,36 @@
 				<div class="category-nav show-on-click">
 					<span class="category-header">{% translate "Categories" %}<i class="fa fa-list"></i></span>
 					<ul class="category-list">
-						<!-- Women's Clothing -->
-						<li class="dropdown side-dropdown">
-
-							<a class="dropdown-toggle"
-							data-toggle="dropdown"
-							aria-expanded="true">
-
-								{% translate "Women's Clothing" %}
-
-								<i class="fa fa-angle-right"></i>
-
-							</a>
-
-
-							<div class="custom-menu">
-
-								<div class="row">
-
-									<div class="col-md-4">
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-										<hr class="hidden-md hidden-lg">
-
-									</div>
-
-								</div>
-
-							</div>
-
-						</li>
-						<!-- /Women's Clothing -->
-
-						<!-- Men's Clothing -->
-						<li>
-							<a href="#">
-								{% translate "Men's Clothing" %}
-							</a>
-						</li>
-						<!-- /Men's Clothing -->
-
-						<!-- Phones & Accessories -->
-						<li class="dropdown side-dropdown">
-
-							<a class="dropdown-toggle"
-							data-toggle="dropdown"
-							aria-expanded="true">
-
-								{% translate "Phones & Accessories" %}
-
-								<i class="fa fa-angle-right"></i>
-
-							</a>
-
-
-							<div class="custom-menu">
-
-								<div class="row">
-
-
-									<div class="col-md-4">
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-
-										<hr>
-
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-										<hr class="hidden-md hidden-lg">
-
-									</div>
-
-
-									<div class="col-md-4">
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-
-										<hr>
-
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-									</div>
-
-
-									<div class="col-md-4 hidden-sm hidden-xs">
-
-										<a class="banner banner-2"
-										href="#">
-
-											<img src="{% static './img/banner04.jpg' %}"
-												alt="{% translate 'New collection banner' %}">
-
-											<div class="banner-caption">
-
-												<h3 class="white-color">
-													{% translate "NEW" %}
-													<br>
-													{% translate "COLLECTION" %}
-												</h3>
-
+						{% for category in categories %}
+							<li class="{% if category.children.all %}dropdown side-dropdown{% endif %}">
+								{% if category.children.all %}
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										{{ category.title }}
+										<i class="fa fa-angle-right"></i>
+									</a>
+									<div class="custom-menu">
+										<div class="row">
+											<div class="col-md-4">
+												<ul class="list-links">
+													<li>
+														<h3 class="list-links-title">{% translate "Subcategories" %}</h3>
+													</li>
+													{% for child in category.children.all %}
+														<li>
+															<a href="">{{ child.title }}</a>
+														</li>
+													{% endfor %}
+												</ul>
 											</div>
-
-										</a>
-
+										</div>
 									</div>
-
-								</div>
-
-							</div>
-
-						</li>
-						<!-- /Phones & Accessories -->
-
-						<li>
-							<a href="#">
-								{% translate "Computer & Office" %}
-							</a>
-						</li>
-
-						<li>
-							<a href="#">
-								{% translate "Consumer Electronics" %}
-							</a>
-						</li>
-
-						<!-- Jewelry & Watches -->
-						<li class="dropdown side-dropdown">
-
-							<a class="dropdown-toggle"
-							data-toggle="dropdown"
-							aria-expanded="true">
-
-								{% translate "Jewelry & Watches" %}
-
-								<i class="fa fa-angle-right"></i>
-
-							</a>
-
-
-							<div class="custom-menu">
-
-								<div class="row">
-
-
-									<div class="col-md-4">
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-
-										<hr>
-
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-									</div>
-
-
-									<div class="col-md-4">
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-
-										<hr>
-
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-										<hr class="hidden-md hidden-lg">
-
-									</div>
-
-
-									<div class="col-md-4">
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-
-										<hr>
-
-
-										<ul class="list-links">
-
-											<li>
-												<h3 class="list-links-title">
-													{% translate "Categories" %}
-												</h3>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Women's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Men's Clothing" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Phones & Accessories" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Jewelry & Watches" %}
-												</a>
-											</li>
-
-											<li>
-												<a href="#">
-													{% translate "Bags & Shoes" %}
-												</a>
-											</li>
-
-										</ul>
-
-									</div>
-
-								</div>
-
-							</div>
-
-						</li>
-						<!-- /Jewelry & Watches -->
-
-						<li>
-							<a href="#">
-								{% translate "Bags & Shoes" %}
-							</a>
-						</li>
-
-						<li>
-							<a href="#">
-								{% translate "View All" %}
-							</a>
-						</li>
-
+								{% else %}
+									<span>Empty</span>
+								{% endif %}
+							</li>
+						{% endfor %}
 					</ul>
 				</div>
-				<!-- /Category Navigation -->
-
 				<!-- Menu Navigation -->
 				<div class="menu-nav">
 					<span class="menu-header">{% translate "Menu" %}<i class="fa fa-bars"></i></span>
