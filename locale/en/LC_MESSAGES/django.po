@@ -1,3 +1,4 @@
+# En file
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -17,154 +18,155 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: .\common\common.py:9 .\common\common.py:33
 msgid "Active"
-msgstr ""
+msgstr "Active"
 
 #: .\common\common.py:10 .\common\common.py:34
 msgid "Inactive"
-msgstr ""
+msgstr "Inactive"
 
 #: .\common\common.py:15 .\common\common.py:24
 msgid "None"
-msgstr ""
+msgstr "None"
 
 #: .\common\common.py:16
 msgid "Color"
-msgstr ""
+msgstr "Color"
 
 #: .\common\common.py:17
 msgid "Size"
-msgstr ""
+msgstr "Size"
 
 #: .\common\common.py:18
 msgid "Color Size"
-msgstr ""
+msgstr "Color Size"
 
 #: .\common\common.py:25
 msgid "Slider"
-msgstr ""
+msgstr "Slider"
 
 #: .\common\common.py:26
 msgid "Add"
-msgstr ""
+msgstr "Add"
 
 #: .\common\common.py:27
 msgid "Feature"
-msgstr ""
+msgstr "Feature"
 
 #: .\common\common.py:28
 msgid "Promotion"
-msgstr ""
+msgstr "Promotion"
 
 #: .\common\common.py:39
 msgid "status"
-msgstr ""
+msgstr "status"
 
 #: .\common\common.py:40
 msgid "created_at"
-msgstr ""
+msgstr "created_at"
 
 #: .\common\common.py:41
 msgid "updated_at"
-msgstr ""
+msgstr "updated_at"
 
 #: .\common\common.py:49
 msgid "slug"
-msgstr ""
+msgstr "slug"
 
 #: .\common\common.py:50
 msgid "additional"
-msgstr ""
+msgstr "additional"
 
 #: .\common\common.py:51
 msgid "description"
-msgstr ""
+msgstr "description"
 
 #: .\common\common.py:82
 #, python-format
 msgid "Only one %(model)s instance is allowed."
-msgstr ""
+msgstr "Only one %(model)s instance is allowed."
 
 #: .\setting\models.py:11 .\store\models.py:31
 msgid "title"
-msgstr ""
+msgstr "title"
 
 #: .\setting\models.py:13 .\store\models.py:33
 msgid "image"
-msgstr ""
+msgstr "image"
 
 #: .\setting\models.py:20
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: .\setting\models.py:21
 msgid "02. Logo"
-msgstr ""
+msgstr "02. Logo"
 
 #: .\store\models.py:37
 msgid "is_featured"
-msgstr ""
+msgstr "is_featured"
 
 #: .\store\views.py:10
 msgid "Hello, world!"
-msgstr ""
+msgstr "Hello, world!"
 
 #: .\templates\base.html:12
 msgid "E-SHOP"
-msgstr ""
+msgstr "E-SHOP"
 
 #: .\templates\base.html:45
 msgid "Welcome to E-SHOP"
-msgstr ""
+msgstr "Welcome to E-SHOP"
 
 #: .\templates\base.html:165
 msgid "Enter your keyword"
-msgstr ""
+msgstr "Enter your keyword"
 
 #: .\templates\base.html:170
 msgid "All Categories"
-msgstr ""
+msgstr "All Categories"
 
 #: .\templates\base.html:174
 msgid "Category 01"
-msgstr ""
+msgstr "Category 01"
 
 #: .\templates\base.html:178
 msgid "Category 02"
-msgstr ""
+msgstr "Category 02"
 
 #: .\templates\base.html:212 .\templates\base.html:235
 msgid "My Account"
-msgstr ""
+msgstr "My Account"
 
 #: .\templates\base.html:220
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: .\templates\base.html:227
 msgid "Join"
-msgstr ""
+msgstr "Join"
 
 #: .\templates\base.html:263
 msgid "My Cart"
-msgstr ""
+msgstr "My Cart"
 
 #: .\templates\base.html:287 .\templates\base.html:322
 msgid "Product image"
-msgstr ""
+msgstr "Product image"
 
 #: .\templates\base.html:302 .\templates\base.html:337
 msgid "Product Name Goes Here"
-msgstr ""
+msgstr "Product Name Goes Here"
 
 #: .\templates\base.html:359
 msgid "View Cart"
-msgstr ""
+msgstr "View Cart"
 
 #: .\templates\base.html:365 .\templates\base.html:1636
 msgid "Checkout"
-msgstr ""
+msgstr "Checkout"
 
 #: .\templates\base.html:418 .\templates\base.html:450
 #: .\templates\base.html:532 .\templates\base.html:576
@@ -177,7 +179,7 @@ msgstr ""
 #: .\templates\base.html:1406 .\templates\base.html:1476
 #: .\templates\base.html:1546
 msgid "Categories"
-msgstr ""
+msgstr "Categories"
 
 #: .\templates\base.html:433 .\templates\base.html:456
 #: .\templates\base.html:538 .\templates\base.html:582
@@ -190,7 +192,7 @@ msgstr ""
 #: .\templates\base.html:1412 .\templates\base.html:1482
 #: .\templates\base.html:1552
 msgid "Women's Clothing"
-msgstr ""
+msgstr "Women's Clothing"
 
 #: .\templates\base.html:462 .\templates\base.html:501
 #: .\templates\base.html:544 .\templates\base.html:588
@@ -203,7 +205,7 @@ msgstr ""
 #: .\templates\base.html:1418 .\templates\base.html:1488
 #: .\templates\base.html:1558
 msgid "Men's Clothing"
-msgstr ""
+msgstr "Men's Clothing"
 
 #: .\templates\base.html:468 .\templates\base.html:514
 #: .\templates\base.html:550 .\templates\base.html:594
@@ -216,7 +218,7 @@ msgstr ""
 #: .\templates\base.html:1424 .\templates\base.html:1494
 #: .\templates\base.html:1564
 msgid "Phones & Accessories"
-msgstr ""
+msgstr "Phones & Accessories"
 
 #: .\templates\base.html:474 .\templates\base.html:556
 #: .\templates\base.html:600 .\templates\base.html:647
@@ -229,7 +231,7 @@ msgstr ""
 #: .\templates\base.html:1430 .\templates\base.html:1500
 #: .\templates\base.html:1570
 msgid "Jewelry & Watches"
-msgstr ""
+msgstr "Jewelry & Watches"
 
 #: .\templates\base.html:480 .\templates\base.html:562
 #: .\templates\base.html:606 .\templates\base.html:653
@@ -242,129 +244,129 @@ msgstr ""
 #: .\templates\base.html:1436 .\templates\base.html:1506
 #: .\templates\base.html:1576
 msgid "Bags & Shoes"
-msgstr ""
+msgstr "Bags & Shoes"
 
 #: .\templates\base.html:712 .\templates\base.html:1260
 msgid "New collection banner"
-msgstr ""
+msgstr "New collection banner"
 
 #: .\templates\base.html:717
 msgid "NEW"
-msgstr ""
+msgstr "NEW"
 
 #: .\templates\base.html:719
 msgid "COLLECTION"
-msgstr ""
+msgstr "COLLECTION"
 
 #: .\templates\base.html:738
 msgid "Computer & Office"
-msgstr ""
+msgstr "Computer & Office"
 
 #: .\templates\base.html:745
 msgid "Consumer Electronics"
-msgstr ""
+msgstr "Consumer Electronics"
 
 #: .\templates\base.html:1054
 msgid "View All"
-msgstr ""
+msgstr "View All"
 
 #: .\templates\base.html:1069
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: .\templates\base.html:1078 .\templates\base.html:1618
 #: .\templates\store\home.html:6
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: .\templates\base.html:1085
 msgid "Shop"
-msgstr ""
+msgstr "Shop"
 
 #: .\templates\base.html:1097
 msgid "Women"
-msgstr ""
+msgstr "Women"
 
 #: .\templates\base.html:1265
 msgid "NEW COLLECTION"
-msgstr ""
+msgstr "NEW COLLECTION"
 
 #: .\templates\base.html:1269
 msgid "HOT DEAL"
-msgstr ""
+msgstr "HOT DEAL"
 
 #: .\templates\base.html:1294
 msgid "Men"
-msgstr ""
+msgstr "Men"
 
 #: .\templates\base.html:1315
 msgid "Women collection"
-msgstr ""
+msgstr "Women collection"
 
 #: .\templates\base.html:1320
 msgid "Women's"
-msgstr ""
+msgstr "Women's"
 
 #: .\templates\base.html:1385
 msgid "Men collection"
-msgstr ""
+msgstr "Men collection"
 
 #: .\templates\base.html:1390
 msgid "Men's"
-msgstr ""
+msgstr "Men's"
 
 #: .\templates\base.html:1455
 msgid "Accessories collection"
-msgstr ""
+msgstr "Accessories collection"
 
 #: .\templates\base.html:1460
 msgid "Accessories"
-msgstr ""
+msgstr "Accessories"
 
 #: .\templates\base.html:1525
 msgid "Bags collection"
-msgstr ""
+msgstr "Bags collection"
 
 #: .\templates\base.html:1530
 msgid "Bags"
-msgstr ""
+msgstr "Bags"
 
 #: .\templates\base.html:1595
 msgid "Sales"
-msgstr ""
+msgstr "Sales"
 
 #: .\templates\base.html:1607
 msgid "Pages"
-msgstr ""
+msgstr "Pages"
 
 #: .\templates\base.html:1624
 msgid "Products"
-msgstr ""
+msgstr "Products"
 
 #: .\templates\base.html:1630
 msgid "Product Details"
-msgstr ""
+msgstr "Product Details"
 
 #: .\templates\base.html:1673
 msgid "Copyright"
-msgstr ""
+msgstr "Copyright"
 
 #: .\templates\base.html:1675
 msgid "All rights reserved"
-msgstr ""
+msgstr "All rights reserved"
 
 #: .\templates\base.html:1678
 msgid "This template is made with"
-msgstr ""
+msgstr "This template is made with"
 
 #: .\templates\base.html:1682
 msgid "by"
-msgstr ""
+msgstr "by"
 
 #: .\validation\validators.py:10
 msgid "Enter a valid phone number"
-msgstr ""
+msgstr "Enter a valid phone number"
 
 #: .\validation\validators.py:15
 msgid "Username can contain only letters, numbers and underscore"
-msgstr ""
+msgstr "Username can contain only letters, numbers and underscore"
