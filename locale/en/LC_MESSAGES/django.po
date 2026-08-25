@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 14:30+0600\n"
+"POT-Creation-Date: 2026-08-25 17:40+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,7 +107,7 @@ msgstr "02. Logo"
 msgid "is_featured"
 msgstr "is_featured"
 
-#: .\store\views.py:9
+#: .\store\views.py:10
 msgid "Hello, world!"
 msgstr "Hello, world!"
 
@@ -121,15 +121,15 @@ msgstr "Welcome to E-SHOP"
 
 #: .\templates\base.html:50
 msgid "Store"
-msgstr "Store"
+msgstr ""
 
 #: .\templates\base.html:51
 msgid "Newsletter"
-msgstr "Newsletter"
+msgstr ""
 
 #: .\templates\base.html:52
 msgid "FAQ"
-msgstr "FAQ"
+msgstr ""
 
 #: .\templates\store\home.html:6
 msgid "Home"
