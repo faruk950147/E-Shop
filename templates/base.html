@@ -9,12 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>
-    {% blocktranslate with site_name=site_name.title %}
-        {{ site_name }}
-    {% endblocktranslate %}
-    {% block title %}{% endblock title %}
-</title>
+	<title> {% block title %}{% endblock title %}</title>
 	
 	<link rel="icon" href="{% static "img/favicon.ico" %}">
 
@@ -47,7 +42,7 @@
 			<div class="container">
 
 				<div class="pull-left">
-					<span>{% translate "Welcome to" %} {{ site_name.title }}!</span>
+					<span>{% translate "Welcome to" %}!</span>
 				</div>
 
 				<div class="pull-right">

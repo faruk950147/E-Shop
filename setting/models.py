@@ -6,17 +6,6 @@ from mixins.mixins import StripMixin, ImageTagMixin
 from validation.validators import validate_image_size, validate_file_extension
 
 
-class SiteName(StripMixin, SingletonMixin, BaseMixin):
-    title = models.CharField(_('title'), unique=True, max_length=150, help_text='Site Title')
-
-    class Meta:
-        verbose_name = _("Site Name")
-        verbose_name_plural = _("01. Site Name")
-        db_table = "settings_site_name"
-
-    def __str__(self):
-        return self.title
-
 
 class Logo(StripMixin, SingletonMixin, BaseMixin, ImageTagMixin):
     title = models.CharField(_('title'), unique=True, max_length=150, help_text='Site Logo')

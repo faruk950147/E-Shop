@@ -1,4 +1,4 @@
-from .models import SiteName, Logo, Footer
+from setting.models import Logo, Footer
 
 
 def site_settings(request):
@@ -7,10 +7,6 @@ def site_settings(request):
     """
 
     return {
-        "site_name": SiteName.objects.filter(
-            status="active"
-        ).first(),
-
         "site_logo": Logo.objects.filter(
             status="active"
         ).first(),

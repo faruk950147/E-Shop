@@ -1,16 +1,6 @@
 from django.contrib import admin
-from setting.models import SiteName, Logo, Footer, Link
+from setting.models import Logo, Footer, Link
 
-
-@admin.register(SiteName)
-class SiteNameAdmin(admin.ModelAdmin):
-    list_display = ("title", "status", "created_at", "updated_at")
-    
-    # Optional: Prevent adding more than one object in the admin if your SingletonMixin doesn't handle it
-    def has_add_permission(self, request):
-        if SiteName.objects.exists():
-            return False
-        return super().has_add_permission(request)
 
 
 @admin.register(Logo)
