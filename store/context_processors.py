@@ -1,11 +1,15 @@
-from store.models import Category  # Adjust the import path to match your app structure
-
+from store.models import Category
+from django.utils import translation
 
 def store_context(request):
     """Context processor to make store categories globally available in templates."""
+    # 1. Get current language from request (e.g., 'en', 'bn')
+    user_language = getattr(request, 'LANGUAGE_CODE', 'en')
+    
+    # 2. Activate language context for this request thread
+    translation.activate(user_language)
+
+    # 3. Return queryset standardly (MultilingualQuerySet will pick up the active language)
     return {
-        # Prefetch child categories to optimize queries for your dropdown menus
-        "categories": Category.objects.filter(parent=None).prefetch_related(
-            "children"
-        )
+        "categories": Category.objects.filter(parent__isnull=True)
     }

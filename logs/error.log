@@ -1138,3 +1138,114 @@ Traceback (most recent call last):
     from setting.models import Logo, Footer
 ImportError: cannot import name 'Footer' from 'setting.models' (C:\Users\Omar Faruk\Desktop\E-Shop\setting\models.py)
 [ERROR] 2026-08-25 13:58:01,395 django.server - "GET /en/ HTTP/1.1" 500 170040
+[ERROR] 2026-08-25 22:42:40,078 django.request - Internal Server Error: /en/
+Traceback (most recent call last):
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\store\views.py", line 12, in get
+    return render(request, "store/home.html", {"current_lang": current_lang, "message": message})
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\defaulttags.py", line 199, in render
+    len_values = len(values)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\db\models\query.py", line 1956, in _fetch_all
+    self._prefetch_related_objects()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\db\models\query.py", line 1330, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\db\models\query.py", line 2408, in prefetch_related_objects
+    obj_list, additional_lookups = prefetch_one_level(
+                                   ~~~~~~~~~~~~~~~~~~^
+        obj_to_fetch,
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        level,
+        ^^^^^^
+    )
+    ^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\db\models\query.py", line 2572, in prefetch_one_level
+    ) = prefetcher.get_prefetch_querysets(
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        instances, lookup.get_current_querysets(level)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 802, in get_prefetch_querysets
+    instance = instances_dict[rel_obj_attr(rel_obj)]
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: (None,)
+[ERROR] 2026-08-25 22:42:40,089 django.server - "GET /en/ HTTP/1.1" 500 180057
+[ERROR] 2026-08-25 22:54:01,230 django.request - Internal Server Error: /en/
+Traceback (most recent call last):
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\store\views.py", line 12, in get
+    return render(request, "store/home.html", {"current_lang": current_lang, "message": message})
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\base.py", line 170, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python 3\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\.venv\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+  File "C:\Users\Omar Faruk\Desktop\E-Shop\store\context_processors.py", line 11, in store_context
+    "categories": Category.objects.filter(parent__isnull=True).language(current_lang)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MultilingualQuerySet' object has no attribute 'language'
+[ERROR] 2026-08-25 22:54:01,241 django.server - "GET /en/ HTTP/1.1" 500 119720

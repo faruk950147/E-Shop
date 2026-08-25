@@ -131,6 +131,16 @@ LANGUAGES = [
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale')
 ]
+PARLER_LANGUAGES = {
+    1: (
+        {'code': 'en'},
+        {'code': 'bn'},
+    ),
+    'default': {
+        'fallback': 'bn',  # Fallback to Bangla if English is missing
+        'hide_untranslated': False,
+    }
+}
 
 # =========================
 # Static & Media files
