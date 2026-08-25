@@ -9,7 +9,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>{% translate "E-SHOP" %}{% block title %}{% endblock title %}</title>
+	<title>
+    {% blocktranslate with site_name=site_name.title %}
+        {{ site_name }}
+    {% endblocktranslate %}
+    {% block title %}{% endblock title %}
+</title>
 	
 	<link rel="icon" href="{% static "img/favicon.ico" %}">
 
@@ -42,7 +47,7 @@
 			<div class="container">
 
 				<div class="pull-left">
-					<span>Welcome to {{ site_name.title }}!</span>
+					<span>{% translate "Welcome to" %} {{ site_name.title }}!</span>
 				</div>
 
 				<div class="pull-right">
@@ -57,7 +62,7 @@
 								{% if CURRENT_LANGUAGE == "en" %}
 									ENG
 								{% elif CURRENT_LANGUAGE == "bn" %}
-									বাংলা
+									BAN
 								{% endif %}
 
 								<i class="fa fa-caret-down"></i>
@@ -69,7 +74,19 @@
 										{% csrf_token %}
 										<input type="hidden" name="language" value="en">
 										<input type="hidden" name="next" value="{{ request.get_full_path }}">
-										<button type="submit" style="border: none; outline: none;">English (ENG)</button>
+										<button
+											type="submit"
+											style="
+												border: none;
+												outline: none;
+												background: none;
+												padding: 0;
+												text-align: center;
+												cursor: pointer;
+											"
+										>
+										ENG
+										</button>
 									</form>
 								</li>
 
@@ -78,7 +95,19 @@
 										{% csrf_token %}
 										<input type="hidden" name="language" value="bn">
 										<input type="hidden" name="next" value="{{ request.get_full_path }}">
-										<button style="border: none; outline: none;" type="submit">বাংলা (BN)</button>
+										<button
+											type="submit"
+											style="
+												border: none;
+												outline: none;
+												background: none;
+												padding: 0;
+												text-align: center;
+												cursor: pointer;
+											"
+										>
+											BNG
+										</button>
 									</form>
 								</li>
 							</ul>
